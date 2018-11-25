@@ -8,7 +8,7 @@ function BackgroundBattle(ctx) {
   this.h = this.ctx.canvas.height;
 
   this.img = new Image();
-  this.img.src = "https://vignette.wikia.nocookie.net/fantendo/images/5/51/Pok%C3%A9mon_Stadium_2.jpg/revision/latest?cb=20141221100214";
+  this.img.src = "./assets/img/bg-battle.jpg";
 }
 
 BackgroundBattle.prototype.draw = function() {
