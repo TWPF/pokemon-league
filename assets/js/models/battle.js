@@ -4,9 +4,9 @@ function Battle(canvasId) {
   this.canvas.height = window.innerHeight;
   this.ctx = this.canvas.getContext('2d');
 
-
-  this.charizard = new Charizard(this.ctx, 1);
-  this.pikachu = new Pikachu(this.ctx, 2);
+  this.pikachu = new Pikachu(this.ctx, 1);
+  this.charizard = new Charizard(this.ctx, 2);
+  
   this.bg = new BackgroundBattle(this.ctx);
   this.bgtitle = new BackgroundTitle(this.ctx);
 }

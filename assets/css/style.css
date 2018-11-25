@@ -4,9 +4,45 @@ html {
 
 body {
   margin: 0;
+  background: #000;
 }
 
-canvas {
-
-  margin: auto;
+.player-panel-1 {
+  position: fixed;
+  bottom: 10%;
+  left: 15%; 
+  border: 3px solid #000;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #fefcea 0%,#f1da36 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: center;
 }
+
+.player-panel-2 {
+  position: fixed;
+  bottom: 10%;
+  right: 15%;
+  border: 3px solid #000;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #fefcea 0%,#f1da36 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.left, .right {
+  width: 40%;
+  margin: 2%;
+}
+
+.player-panel-1 button, .player-panel-2 button {
+  background: linear-gradient(to bottom, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%);
+  color: #FFF;
+  border: 1px solid #000;
+}
+
