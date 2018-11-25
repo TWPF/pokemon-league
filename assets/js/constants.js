@@ -1,0 +1,1 @@
+var DRAW_INTERVAL_MS = 1000 / 60;
