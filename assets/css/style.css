@@ -4,22 +4,32 @@ html {
 }
 
 body {
+  font-family: 'Signika', sans-serif;
   margin: 0;
   background: url('../img/bg-battle.jpg') no-repeat;
   background-size: cover;
 }
 
+
+
 #pokemon-img-1 {
   position: fixed;
-  top: 24%;
+  top: 23%;
   left: 22%;
 }
 
 #pokemon-img-2 {
   position: fixed;
-  top: 24%;
+  top: 23%;
   right: 22%;
 }
+
+#pokemon-name-1, #pokemon-name-2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
 
 .player-panel-1 {
   position: fixed;
@@ -51,7 +61,7 @@ body {
 
 .left, .right {
   width: 40%;
-  margin: 1%;
+  margin: 1% 0;
 }
 
 .player-panel-1 button, .player-panel-2 button {

@@ -8,15 +8,16 @@ function Pokemon(name, imageSrc, type, movements, playerPosition) {
     this.isLeft = playerPosition === 1;
 }   
 
+
+// Initialize the Pokemon data
+
 Pokemon.prototype.initialize = function() {
     this.setImage();
     this.setName();
     this.setPsPoints();
     this.setAttackButtons();
+    this.setListeners();
 }
-
-
-// Initialize the Pokemon data
 
 Pokemon.prototype.setImage = function() {
     if(this.isLeft) {
@@ -54,8 +55,23 @@ Pokemon.prototype.setAttackButtons = function() {
     }
 }
 
+Pokemon.prototype.setListeners = function() {
+    if (this.isLeft) {
+        for (var i = 0; i < 4; i++) {
+            $(PLAYER1_SELECTORS[i]).on('click', this.clickAttack);
+        }
+    } else {
+        for (var i=0; i<4; i++) {
+            $(PLAYER2_SELECTORS[i]).on('click', this.clickAttack);
+        }
+    }
+}
+
 //END Initialize the Pokemon data
 
-Pokemon.prototype.setListeners = function() {
-    
+
+Pokemon.prototype.clickAttack = function() {
+    console.log("hola");
 }
+
+
