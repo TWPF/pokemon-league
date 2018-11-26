@@ -1,10 +1,24 @@
 html {
   overflow: hidden;
+
 }
 
 body {
   margin: 0;
-  background: #000;
+  background: url('../img/bg-battle.jpg') no-repeat;
+  background-size: cover;
+}
+
+#pokemon-1 {
+  position: fixed;
+  top: 24%;
+  left: 22%;
+}
+
+#pokemon-2 {
+  position: fixed;
+  top: 24%;
+  right: 22%;
 }
 
 .player-panel-1 {
@@ -44,5 +58,6 @@ body {
   background: linear-gradient(to bottom, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%);
   color: #FFF;
   border: 1px solid #000;
+  box-shadow: 0 8px 6px -6px black;
 }
 

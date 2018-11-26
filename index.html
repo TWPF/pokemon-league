@@ -10,28 +10,32 @@
 </head> 
 <body>
 
-  <canvas id="main-battle" width="600" height="600"></canvas>
+  <img id="pokemon-1" src="assets/img/charizard.gif">
+  <img id="pokemon-2" src="assets/img/pikachu.gif">
 
   <div class="player-panel-1">
-    <button class="option-1 btn left">Impactrueno</button>
-    <button class="option-2 btn right">Placaje</button>
-    <button class="option-3 btn left">Rapidez</button>
-    <button class="option-4 btn right">Salir</button>
+    <button id="option-1" class="btn left"></button>
+    <button id="option-2" class="btn right"></button>
+    <button id="option-3" class="btn left"></button>
+    <button id="option-4" class="btn right"></button>
   </div>
 
   <div class="player-panel-2">
-    <button class="option-1 btn left">Impactrueno</button>
-    <button class="option-2 btn right">Placaje</button>
-    <button class="option-3 btn left">Rapidez</button>
-    <button class="option-4 btn right">Salir</button>
+    <button id="option-5" class="btn left"></button>
+    <button id="option-6" class="btn right"></button>
+    <button id="option-7" class="btn left"></button>
+    <button id="option-8" class="btn right"></button>
   </div>
 
+  
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="assets/js/constants.js"></script>
+  <script src="assets/js/models/move.js"></script>
   <script src="assets/js/models/pokemon.js"></script>
   <script src="assets/js/models/pokemon/pikachu.js"></script>
   <script src="assets/js/models/pokemon/charizard.js"></script>
-  <script src="assets/js/models/background-battle.js"></script>
-  <script src="assets/js/models/background-title.js"></script>
   <script src="assets/js/models/battle.js"></script>
   <script src="assets/js/index.js"></script>
 </body>
