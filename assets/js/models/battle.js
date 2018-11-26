@@ -4,8 +4,8 @@ function Battle() {
 }
 
 Battle.prototype.start = function() {
-  this.charizard.setAttackListeners();
-  this.pikachu.setAttackListeners();
+  this.charizard.initialize();
+  this.pikachu.initialize();
 }
 
 
