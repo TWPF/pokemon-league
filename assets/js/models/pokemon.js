@@ -58,33 +58,20 @@ Pokemon.prototype.setAttackButtons = function() {
 
 
 
-//Attacks
+//Rendering logic
 
 Pokemon.prototype.attackMovement = function(numberAttack) {
     if(this.isLeft) {
+        $('#pokemon-img-1').css("left","32%");
         setTimeout(function() {
-            $('#pokemon-img-1').css("margin-right","5%");
-        }, 1000);
-        setTimeout(function() {
-            $('#pokemon-img-1').css("margin-left","5%");
+            $('#pokemon-img-1').css("left","22%"); 
         }, 1000);
     } else {
+        $('#pokemon-img-2').css("right","32%");
         setTimeout(function() {
-            $('#pokemon-img-2').css("margin-left","5%");
-        }, 1000);
-        setTimeout(function() {
-            $('#pokemon-img-1').css("margin-right","5%");
+            $('#pokemon-img-2').css("right","22%"); 
         }, 1000);
     }  
-}
-
-Pokemon.prototype.attackPoints = function(numberAttack) {
-    return this.movements[numberAttack].damage;
-}
-
-Pokemon.prototype.receiveAttack = function (pointsAttack) {
-    this.ps -= pointsAttack;
-    this.updateLife();
 }
 
 Pokemon.prototype.updateLife = function () {
@@ -94,3 +81,26 @@ Pokemon.prototype.updateLife = function () {
         $('#pokemon-ps-2').text("Life: " + this.ps + "/100");
     }
 }
+
+//END Rendering logic
+
+
+//Game logic
+
+Pokemon.prototype.attackPoints = function(numberAttack) {
+    return this.movements[numberAttack].damage;
+}
+
+Pokemon.prototype.receiveAttack = function (pointsAttack) {
+    if (pointsAttack >= this.ps) {
+        this.ps = 0;
+        this.updateLife();
+        alert('Your Pokemon is dead!');
+    } else {
+    this.ps -= pointsAttack;
+    this.updateLife();
+    }
+}
+
+//END Game logic
+
