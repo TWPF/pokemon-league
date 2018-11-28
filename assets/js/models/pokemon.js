@@ -16,7 +16,6 @@ Pokemon.prototype.initialize = function() {
     this.setName();
     this.setPsPoints();
     this.setAttackButtons();
-    this.setListeners();
 }
 
 Pokemon.prototype.setImage = function() {
@@ -55,23 +54,43 @@ Pokemon.prototype.setAttackButtons = function() {
     }
 }
 
-Pokemon.prototype.setListeners = function() {
-    if (this.isLeft) {
-        for (var i = 0; i < 4; i++) {
-            $(PLAYER1_SELECTORS[i]).on('click', this.clickAttack);
-        }
-    } else {
-        for (var i=0; i<4; i++) {
-            $(PLAYER2_SELECTORS[i]).on('click', this.clickAttack);
-        }
-    }
-}
-
 //END Initialize the Pokemon data
 
 
-Pokemon.prototype.clickAttack = function() {
-    console.log("hola");
+
+//Attacks
+
+Pokemon.prototype.attackMovement = function(numberAttack) {
+    if(this.isLeft) {
+        setTimeout(function() {
+            $('#pokemon-img-1').css("margin-right","5%");
+        }, 1000);
+        setTimeout(function() {
+            $('#pokemon-img-1').css("margin-left","5%");
+        }, 1000);
+    } else {
+        setTimeout(function() {
+            $('#pokemon-img-2').css("margin-left","5%");
+        }, 1000);
+        setTimeout(function() {
+            $('#pokemon-img-1').css("margin-right","5%");
+        }, 1000);
+    }  
 }
 
+Pokemon.prototype.attackPoints = function(numberAttack) {
+    return this.movements[numberAttack].damage;
+}
 
+Pokemon.prototype.receiveAttack = function (pointsAttack) {
+    this.ps -= pointsAttack;
+    this.updateLife();
+}
+
+Pokemon.prototype.updateLife = function () {
+    if(this.isLeft) {
+        $('#pokemon-ps-1').text("Life: " + this.ps + "/100");
+    } else {
+        $('#pokemon-ps-2').text("Life: " + this.ps + "/100");
+    }
+}
