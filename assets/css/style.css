@@ -1,12 +1,11 @@
 html {
   overflow: hidden;
-
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Signika', sans-serif;
-  margin: 0;
-  background: url('../img/bg-battle.jpg') no-repeat;
+  background: url('../img/bg-battle.jpg') no-repeat fixed;
   background-size: cover;
 }
 
@@ -14,7 +13,7 @@ body {
 
 #pokemon-img-1 {
   position: fixed;
-  top: 23%;
+  top: 24%;
   left: 22%;
   transform: scaleX(-1);
 }
@@ -26,19 +25,21 @@ body {
 }
 
 #pokemon-name-1, #pokemon-name-2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
-
-
 .player-panel-1 {
   position: fixed;
+  height: 10rem;
+  width: 24rem;
   bottom: 4%;
-  left: 10%; 
-  border: 3px solid #000;
-  border-radius: 20px;
-  background: orange;
+  left: 4%; 
+  border: 2px solid #000;
+  background: #fd746c;
+  background: -webkit-linear-gradient(to right, #fd746c, #ff9068);
+  background: linear-gradient(to right, #fd746c, #ff9068);
+  opacity: 0.95;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,11 +49,15 @@ body {
 
 .player-panel-2 {
   position: fixed;
+  height: 10rem;
+  width: 24rem;
   bottom: 4%;
-  right: 10%;
-  border: 3px solid #000;
-  border-radius: 20px;
-  background: yellow;
+  right: 4%;
+  border: 2px solid #000;
+  background: #fd746c;
+  background: -webkit-linear-gradient(to right, #fd746c, #ff9068);
+  background: linear-gradient(to right, #fd746c, #ff9068);
+  opacity: 0.95;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,9 +65,43 @@ body {
   align-content: center;
 }
 
+.panel-active-1 {
+  background: orange;
+}
+
+.panel-active-2 {
+  background: yellow;
+}
+
 .left, .right {
-  width: 40%;
+  width: 35%;
   margin: 1% 0;
+}
+
+progress[value] {
+  margin: 2% 0;
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.full {
+  width: 70%;
+  margin: auto;
 }
 
 .player-panel-1 button, .player-panel-2 button {

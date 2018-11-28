@@ -6,6 +6,7 @@ function Pokemon(name, imageSrc, type, movements, playerPosition) {
     this.type = type;
     this.movements = movements;
     this.isLeft = playerPosition === 1;
+    this.isAlive = this.ps > 0;
 }   
 
 
@@ -77,8 +78,18 @@ Pokemon.prototype.attackMovement = function(numberAttack) {
 Pokemon.prototype.updateLife = function () {
     if(this.isLeft) {
         $('#pokemon-ps-1').text("Life: " + this.ps + "/100");
+        $('#pokemon-health-1').attr("value", this.ps);
     } else {
         $('#pokemon-ps-2').text("Life: " + this.ps + "/100");
+        $('#pokemon-health-2').attr("value", this.ps);
+    }
+}
+
+Pokemon.prototype.dissapearPokemon = function() {
+    if (this.isLeft) {
+        $('#pokemon-img-1').fadeOut(2000);
+    } else {
+        $('#pokemon-img-2').fadeOut(2000);
     }
 }
 
@@ -93,13 +104,17 @@ Pokemon.prototype.attackPoints = function(numberAttack) {
 
 Pokemon.prototype.receiveAttack = function (pointsAttack) {
     if (pointsAttack >= this.ps) {
-        this.ps = 0;
-        this.updateLife();
-        alert('Your Pokemon is dead!');
+        this.isDead();
     } else {
     this.ps -= pointsAttack;
     this.updateLife();
     }
+}
+
+Pokemon.prototype.isDead = function() {
+    this.ps = 0;
+    this.updateLife();
+    this.dissapearPokemon();
 }
 
 //END Game logic

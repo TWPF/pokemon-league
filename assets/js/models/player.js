@@ -7,3 +7,4 @@ function Player(name, pokemon, playerPosition) {
 Player.prototype.initialize = function() {
   this.pokemon.initialize();
 }
+
