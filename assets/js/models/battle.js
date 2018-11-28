@@ -10,25 +10,16 @@ Battle.prototype.start = function() {
 }
 
 Battle.prototype.setListeners = function() {
-  for (var i=0; i<4; i++) {
-    $(PLAYER1_SELECTORS[i]).click(function() {
-      this.clickAttackPokemon1(i);
+  PLAYER1_SELECTORS.forEach(function(selector, index) {
+    $(selector).click(function() {
+      this.clickAttackPokemon1(index);
     }.bind(this));
-  }
-
-    $("#option-5").on("click", function() {
-      this.clickAttackPokemon2(0);      
+  }.bind(this));
+  PLAYER2_SELECTORS.forEach(function(selector, index) {
+    $(selector).click(function() {
+      this.clickAttackPokemon2(index);
     }.bind(this));
-     $("#option-6").on("click", function() {
-      this.clickAttackPokemon2(1);      
-    }.bind(this));
-     $("#option-7").on("click", function() {
-      this.clickAttackPokemon2(2);      
-    }.bind(this));
-     $("#option-8").on("click", function() {
-      this.clickAttackPokemon2(3);      
-    }.bind(this));
-
+  }.bind(this));
 }
 
 Battle.prototype.clickAttackPokemon1 = function(numberAttack) {
