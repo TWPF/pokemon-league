@@ -6,7 +6,7 @@ function Pokemon(name, imageSrc, type, movements, playerPosition) {
     this.type = type;
     this.movements = movements;
     this.isLeft = playerPosition === 1;
-    this.isAlive = this.ps > 0;
+
 }   
 
 
@@ -15,15 +15,17 @@ function Pokemon(name, imageSrc, type, movements, playerPosition) {
 Pokemon.prototype.initialize = function() {
     this.setImage();
     this.setName();
-    this.setPsPoints();
+    this.updateLife();
     this.setAttackButtons();
 }
 
 Pokemon.prototype.setImage = function() {
     if(this.isLeft) {
         $('#pokemon-img-1').attr('src', this.imageSrc);
+        $('#pokemon-img-1').fadeIn(4000);
     } else {
         $('#pokemon-img-2').attr('src', this.imageSrc);
+        $('#pokemon-img-2').fadeIn(4000);
     }
 }
 
@@ -109,6 +111,10 @@ Pokemon.prototype.receiveAttack = function (pointsAttack) {
     this.ps -= pointsAttack;
     this.updateLife();
     }
+}
+
+Pokemon.prototype.isAlive = function() {
+    return this.ps > 0;
 }
 
 Pokemon.prototype.isDead = function() {
