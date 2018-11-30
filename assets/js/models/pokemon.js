@@ -22,10 +22,10 @@ Pokemon.prototype.initialize = function() {
 Pokemon.prototype.setImage = function() {
     if(this.isLeft) {
         $('#pokemon-img-1').attr('src', this.imageSrc);
-        $('#pokemon-img-1').fadeIn(4000);
+        $('#pokemon-img-1').show();
     } else {
         $('#pokemon-img-2').attr('src', this.imageSrc);
-        $('#pokemon-img-2').fadeIn(4000);
+        $('#pokemon-img-2').show();
     }
 }
 
@@ -87,14 +87,6 @@ Pokemon.prototype.updateLife = function () {
     }
 }
 
-Pokemon.prototype.dissapearPokemon = function() {
-    if (this.isLeft) {
-        $('#pokemon-img-1').fadeOut(2000);
-    } else {
-        $('#pokemon-img-2').fadeOut(2000);
-    }
-}
-
 //END Rendering logic
 
 
@@ -120,7 +112,6 @@ Pokemon.prototype.isAlive = function() {
 Pokemon.prototype.isDead = function() {
     this.ps = 0;
     this.updateLife();
-    this.dissapearPokemon();
 }
 
 //END Game logic
