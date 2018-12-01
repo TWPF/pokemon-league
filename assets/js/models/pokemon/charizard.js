@@ -1,9 +1,10 @@
 function Charizard(playerPosition) {
-  this.name = "Charizard";
-  this.imageSrc = "./assets/img/charizard.gif";
-  this.type = 'fire';
-  this.movements = [new Move("Flamethrower"), new Move('Scratch'), new Move('Inferno'), new Move('Earthquake')];
-  Pokemon.call(this, this.name, this.imageSrc, this.type, this.movements, playerPosition);
+  Pokemon.call(this, 
+    "Charizard", 
+    "./assets/img/charizard.gif", 
+    "fire", 
+    [new Move("Flamethrower"), new Move('Scratch'), new Move('Inferno'), new Move('Earthquake')],
+     playerPosition);
 }
 
 Charizard.prototype = Object.create(Pokemon.prototype);

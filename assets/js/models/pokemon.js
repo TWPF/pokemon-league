@@ -67,7 +67,7 @@ Pokemon.prototype.setAttackButtons = function() {
 
 //Rendering logic
 
-Pokemon.prototype.attackMovement = function(numberAttack) {
+Pokemon.prototype.attackMovement = function() {
     if(this.isLeft) {
         $('#pokemon-img-1').addClass('attack-right');
         setTimeout(function() {
@@ -117,8 +117,8 @@ Pokemon.prototype.dissapearPokemon = function() {
     }.bind(this), 500)
 }
 
-Pokemon.prototype.attackMessage = function(numberAttack) {
-    $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + '. Quits ' + this.movements[numberAttack].damage + ' points of life.');
+Pokemon.prototype.attackMessage = function(numberAttack, points) {
+    $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + '. Quits ' + points + ' points of life.');
 }
 
 //END Rendering logic
@@ -126,8 +126,8 @@ Pokemon.prototype.attackMessage = function(numberAttack) {
 
 //Game logic
 
-Pokemon.prototype.attackPoints = function(numberAttack) {
-    return this.movements[numberAttack].damage;
+Pokemon.prototype.attackPoints = function() {
+    return Math.floor(Math.random() * 26) + 10;
 }
 
 Pokemon.prototype.receiveAttack = function (pointsAttack) {

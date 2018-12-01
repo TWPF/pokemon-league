@@ -12,9 +12,15 @@ function Battle() {
 }
 
 Battle.prototype.start = function() {
+  this.initializeBattleBoard();
   this.player1.initialize();
   this.player2.initializeMachine();
   this.turnsGame();
+}
+
+Battle.prototype.initializeBattleBoard = function() {
+  $('#characters-selector').hide();
+  $('#battle-elements').css('visibility', 'visible');
 }
 
 Battle.prototype.turnsGame = function() {
@@ -32,13 +38,13 @@ Battle.prototype.turnsGame = function() {
 
 
   Battle.prototype.attackPokemon1 = function(numberAttack) {
-    var pointsLife = this.player1.pokemon[0].attackPoints(numberAttack);
+    var pointsLife = this.player1.pokemon[0].attackPoints();
     this.player2.pokemon[0].receiveAttack(pointsLife);
-    this.player1.pokemon[0].attackMovement(numberAttack);
+    this.player1.pokemon[0].attackMovement();
     this.toggleActivePokemon();
     
     if(this.player2.pokemon[0].isAlive()) {
-      this.player1.pokemon[0].attackMessage(numberAttack);    
+      this.player1.pokemon[0].attackMessage(numberAttack, pointsLife);    
       this.player2.pokemon[0].receiveMovement();
     } else {
       this.player2.deadPokemon();
@@ -54,13 +60,13 @@ Battle.prototype.turnsGame = function() {
   }
   
   Battle.prototype.attackPokemon2 = function(numberAttack) { 
-    var pointsLife = this.player2.pokemon[0].attackPoints(numberAttack);
+    var pointsLife = this.player2.pokemon[0].attackPoints();
     this.player1.pokemon[0].receiveAttack(pointsLife);
-    this.player2.pokemon[0].attackMovement(numberAttack);
+    this.player2.pokemon[0].attackMovement();
     this.toggleActivePokemon();
 
     if(this.player1.pokemon[0].isAlive()) {
-      this.player2.pokemon[0].attackMessage(numberAttack); 
+      this.player2.pokemon[0].attackMessage(numberAttack, pointsLife);
       this.player1.pokemon[0].receiveMovement();
     } else {
       this.player1.deadPokemon();

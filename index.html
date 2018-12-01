@@ -12,42 +12,50 @@
 <body>
 
   <div id="battle-board">
-
-    <img id="pokemon-img-1">
-    <img id="pokemon-img-2">
-   
-    <div class="player-panel-1 panel-active">
-      <div class="full">
-        <img id="pokeball-1" src="assets/img/pokeball.png"> 
-        <img id="pokeball-2" src="assets/img/pokeball.png">
-        <img id="pokeball-3" src="assets/img/pokeball.png">
+    <div id="battle-elements">
+      <img id="pokemon-img-1">
+      <img id="pokemon-img-2">
+    
+      <div class="player-panel-1 panel-active">
+        <div class="full">
+          <img id="pokeball-1" src="assets/img/pokeball.png"> 
+          <img id="pokeball-2" src="assets/img/pokeball.png">
+          <img id="pokeball-3" src="assets/img/pokeball.png">
+        </div>
+        <p id="message-1"></p>
+        <p id="pokemon-name-1" class="left"></p>
+        <span id="pokemon-ps-1" class="right"></span>
+        <progress id="pokemon-health-1" class="full" value="100" max="100"></progress>
+        <button id="option-1" class="btn left"></button>
+        <button id="option-2" class="btn right"></button>
+        <button id="option-3" class="btn left"></button>
+        <button id="option-4" class="btn right"></button>
       </div>
-      <p id="message-1"></p>
-      <p id="pokemon-name-1" class="left"></p>
-      <span id="pokemon-ps-1" class="right"></span>
-      <progress id="pokemon-health-1" class="full" value="100" max="100"></progress>
-      <button id="option-1" class="btn left"></button>
-      <button id="option-2" class="btn right"></button>
-      <button id="option-3" class="btn left"></button>
-      <button id="option-4" class="btn right"></button>
-    </div>
 
-    <div class="status-panel">
-      <p id="status-message"></p>
-    </div>
-
-    <div class="player-panel-2">
-      <div class="full">
-        <img id="pokeball-4" src="assets/img/pokeball.png">
-        <img id="pokeball-5" src="assets/img/pokeball.png">
-        <img id="pokeball-6" src="assets/img/pokeball.png">
+      <div class="status-panel">
+        <p id="status-message"></p>
       </div>
-      <p id="message-2"></p>
-      <p id="pokemon-name-2" class="left"></p>
-      <span id="pokemon-ps-2" class="right"></span>
-      <progress id="pokemon-health-2" class="full" value="100" max="100"></progress>
+
+      <div class="player-panel-2">
+        <div class="full">
+          <img id="pokeball-4" src="assets/img/pokeball.png">
+          <img id="pokeball-5" src="assets/img/pokeball.png">
+          <img id="pokeball-6" src="assets/img/pokeball.png">
+        </div>
+        <p id="message-2"></p>
+        <p id="pokemon-name-2" class="left"></p>
+        <span id="pokemon-ps-2" class="right"></span>
+        <progress id="pokemon-health-2" class="full" value="100" max="100"></progress>
+      </div>
     </div>
     
+    <div id="characters-selector">
+      <div id="character-elements">
+        <div id="characters-screen"></div>
+        <div class="player-panel-1"></div>
+        <div class="player-panel-2"></div>
+      </div>
+    </div>
   </div>
 
   

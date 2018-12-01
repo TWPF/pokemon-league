@@ -10,6 +10,10 @@ body {
   background-size: cover;
 }
 
+#battle-elements {
+  visibility: hidden;
+}
+
 #pokeball-1, #pokeball-2, #pokeball-3, #pokeball-4, #pokeball-5, #pokeball-6 {
   transform: scale3d(1.2, 1.1, 0.3);
 }
