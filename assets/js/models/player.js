@@ -43,14 +43,17 @@ Player.prototype.clearPanel = function() {
     $('#option-2').hide();
     $('#option-3').hide();
     $('#option-4').hide();
+    $('#pokeball-1').hide();
+    $('#pokeball-2').hide();
+    $('#pokeball-3').hide();
+
   } else {
     $('#pokemon-name-2').hide();
     $('#pokemon-ps-2').hide();
     $('#pokemon-health-2').hide();
-    $('#option-5').hide();
-    $('#option-6').hide();
-    $('#option-7').hide();
-    $('#option-8').hide();
+    $('#pokeball-4').hide();
+    $('#pokeball-5').hide();
+    $('#pokeball-6').hide();
   }
 }
 
@@ -82,7 +85,7 @@ Player.prototype.updatePokeball = function() {
     if (this.pokemon.length === 1) {
       $('#pokeball-2').hide();
     }
-    if (this.pokemon.length === 1) {
+    if (this.pokemon.length === 0) {
       $('#pokeball-3').hide();
     }
   }
@@ -93,7 +96,7 @@ Player.prototype.updatePokeball = function() {
     if (this.pokemon.length === 1) {
       $('#pokeball-5').hide();
     }
-    if (this.pokemon.length === 1) {
+    if (this.pokemon.length === 0 ) {
       $('#pokeball-6').hide();
     }
   }

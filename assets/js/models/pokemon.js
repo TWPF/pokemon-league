@@ -56,15 +56,9 @@ Pokemon.prototype.setPsPoints = function() {
 }
 
 Pokemon.prototype.setAttackButtons = function() {
-    if (this.isLeft) {
         for (var i = 0; i < 4; i++) {
             $(PLAYER1_SELECTORS[i]).text(this.movements[i].name);
         }
-    } else {
-        for (var i=0; i<4; i++) {
-            $(PLAYER2_SELECTORS[i]).text(this.movements[i].name);
-        }
-    }
 }
 
 //END Initialize the Pokemon data
@@ -124,7 +118,7 @@ Pokemon.prototype.dissapearPokemon = function() {
 }
 
 Pokemon.prototype.attackMessage = function(numberAttack) {
-    $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + '. Quits ' + this.movements[numberAttack].damage + ' points of life');
+    $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + '. Quits ' + this.movements[numberAttack].damage + ' points of life.');
 }
 
 //END Rendering logic

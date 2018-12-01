@@ -1,9 +1,9 @@
 function Battle() {
   
-  this.pokemon1 = new Charizard(1);
+  this.pokemon1 = new Blastoise(1);
   this.pokemon2 = new Pikachu(1);
   this.pokemon3 = new Charizard(1);
-  this.pokemon4 = new Pikachu(2);
+  this.pokemon4 = new Mewtwo(2);
   this.pokemon5 = new Charizard(2);
   this.pokemon6 = new Pikachu(2);
   this.player1 = new Player('Javi', 1, this.pokemon1, this.pokemon2, this.pokemon3);
@@ -21,17 +21,17 @@ Battle.prototype.turnsGame = function() {
   // Set Listeners for player 1
   PLAYER1_SELECTORS.forEach(function(selector, index) {
     $(selector).on("click", function() {
-        this.clickAttackPokemon1(index);
+        this.attackPokemon1(index);
         setTimeout(function() {
-          var randomAttack = Math.floor(Math.random() * 4) + 1;
-          this.clickAttackPokemon2(randomAttack);
-        }.bind(this), 3000);
+          var randomAttack = Math.floor(Math.random() * 3);
+          this.attackPokemon2(randomAttack);
+        }.bind(this), 2000);
     }.bind(this));
   }.bind(this));
 }
 
 
-  Battle.prototype.clickAttackPokemon1 = function(numberAttack) {
+  Battle.prototype.attackPokemon1 = function(numberAttack) {
     var pointsLife = this.player1.pokemon[0].attackPoints(numberAttack);
     this.player2.pokemon[0].receiveAttack(pointsLife);
     this.player1.pokemon[0].attackMovement(numberAttack);
@@ -53,11 +53,12 @@ Battle.prototype.turnsGame = function() {
     }
   }
   
-  Battle.prototype.clickAttackPokemon2 = function(numberAttack) { 
+  Battle.prototype.attackPokemon2 = function(numberAttack) { 
     var pointsLife = this.player2.pokemon[0].attackPoints(numberAttack);
     this.player1.pokemon[0].receiveAttack(pointsLife);
     this.player2.pokemon[0].attackMovement(numberAttack);
     this.toggleActivePokemon();
+
     if(this.player1.pokemon[0].isAlive()) {
       this.player2.pokemon[0].attackMessage(numberAttack); 
       this.player1.pokemon[0].receiveMovement();
