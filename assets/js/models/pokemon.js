@@ -19,17 +19,23 @@ Pokemon.prototype.initialize = function() {
     this.setAttackButtons();
 }
 
+Pokemon.prototype.initializeMachine = function() {
+    this.setImage();
+    this.setName();
+    this.updateLife();
+}
+
 Pokemon.prototype.setImage = function() {
     if(this.isLeft) {
         $('#pokemon-img-1').removeClass('attack-right');
         $('#pokemon-img-1').removeClass('receive-attack-left');
         $('#pokemon-img-1').attr('src', this.imageSrc);
-        $('#pokemon-img-1').fadeIn();
+        $('#pokemon-img-1').fadeIn(2000);
     } else {
         $('#pokemon-img-1').removeClass('attack-left');
         $('#pokemon-img-1').removeClass('receive-attack-right');
         $('#pokemon-img-2').attr('src', this.imageSrc);
-        $('#pokemon-img-2').fadeIn();
+        $('#pokemon-img-2').fadeIn(2000);
     }
 }
 
@@ -97,8 +103,6 @@ Pokemon.prototype.receiveMovement = function(numberAttack) {
     }
 }
 
-
-
 Pokemon.prototype.updateLife = function () {
     if(this.isLeft) {
         $('#pokemon-ps-1').text("Life: " + this.ps + "/100");
@@ -116,7 +120,11 @@ Pokemon.prototype.dissapearPokemon = function() {
         } else {
             $('#pokemon-img-2').fadeOut();
         }
-    }.bind(this), 1000)
+    }.bind(this), 500)
+}
+
+Pokemon.prototype.attackMessage = function(numberAttack) {
+    $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + '. Quits ' + this.movements[numberAttack].damage + ' points of life');
 }
 
 //END Rendering logic

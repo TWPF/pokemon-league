@@ -9,34 +9,13 @@ Player.prototype.initialize = function() {
   this.pokemon[0].initialize();
 }
 
+Player.prototype.initializeMachine = function() {
+  this.pokemon[0].initializeMachine();
+}
+
 Player.prototype.changePokemon = function() {
   this.pokemon[0].initialize();
   this.updatePokeball();
-}
-
-Player.prototype.updatePokeball = function() {
-  if (this.isLeft) {
-    if (this.pokemon.length === 2) {
-      $('#pokeball-1').hide();
-    }
-    if (this.pokemon.length === 1) {
-      $('#pokeball-2').hide();
-    }
-    if (this.pokemon.length === 1) {
-      $('#pokeball-3').hide();
-    }
-  }
-  else {
-    if (this.pokemon.length === 2) {
-      $('#pokeball-4').hide();
-    }
-    if (this.pokemon.length === 1) {
-      $('#pokeball-5').hide();
-    }
-    if (this.pokemon.length === 1) {
-      $('#pokeball-6').hide();
-    }
-  }
 }
 
 Player.prototype.losesBattle = function() {
@@ -92,6 +71,31 @@ Player.prototype.winMessage = function() {
   } else {
     $('.player-panel-2').addClass('panel-active');
     $('#message-2').text('You win the battle!');
+  }
+}
+
+Player.prototype.updatePokeball = function() {
+  if (this.isLeft) {
+    if (this.pokemon.length === 2) {
+      $('#pokeball-1').hide();
+    }
+    if (this.pokemon.length === 1) {
+      $('#pokeball-2').hide();
+    }
+    if (this.pokemon.length === 1) {
+      $('#pokeball-3').hide();
+    }
+  }
+  else {
+    if (this.pokemon.length === 2) {
+      $('#pokeball-4').hide();
+    }
+    if (this.pokemon.length === 1) {
+      $('#pokeball-5').hide();
+    }
+    if (this.pokemon.length === 1) {
+      $('#pokeball-6').hide();
+    }
   }
 }
 
