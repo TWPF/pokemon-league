@@ -51,42 +51,49 @@ Player.prototype.winsBattle = function() {
 }
 
 Player.prototype.deadPokemon = function() {
-  this.pokemon.shift();
+  this.pokemon[0].dissapearPokemon();
+  this.pokemon.shift(); 
 }
 
 Player.prototype.clearPanel = function() {
   if (this.isLeft) {
-    $('#pokemon-name-1').fadeOut();
-    $('#pokemon-ps-1').fadeOut();
-    $('#pokemon-health-1').fadeOut();
-    $('#option-1').fadeOut();
-    $('#option-2').fadeOut();
-    $('#option-3').fadeOut();
-    $('#option-4').fadeOut();
+    $('#pokemon-name-1').hide();
+    $('#pokemon-ps-1').hide();
+    $('#pokemon-health-1').hide();
+    $('#option-1').hide();
+    $('#option-2').hide();
+    $('#option-3').hide();
+    $('#option-4').hide();
   } else {
-    $('#pokemon-name-2').fadeOut();
-    $('#pokemon-ps-2').fadeOut();
-    $('#pokemon-health-2').fadeOut();
-    $('#option-5').fadeOut();
-    $('#option-6').fadeOut();
-    $('#option-7').fadeOut();
-    $('#option-8').fadeOut();
+    $('#pokemon-name-2').hide();
+    $('#pokemon-ps-2').hide();
+    $('#pokemon-health-2').hide();
+    $('#option-5').hide();
+    $('#option-6').hide();
+    $('#option-7').hide();
+    $('#option-8').hide();
   }
 }
 
 Player.prototype.loseMessage = function() {
   if (this.isLeft) {
+    $('.player-panel-1').removeClass('panel-active');
     $('#message-1').text('You lose the battle!');
   } else {
+    $('.player-panel-2').removeClass('panel-active');
     $('#message-2').text('You lose the battle!');
   }
 }
 
 Player.prototype.winMessage = function() {
   if (this.isLeft) {
+    $('.player-panel-1').addClass('panel-active');
     $('#message-1').text('You win the battle!');
   } else {
+    $('.player-panel-2').addClass('panel-active');
     $('#message-2').text('You win the battle!');
   }
 }
+
+
 

@@ -21,11 +21,15 @@ Pokemon.prototype.initialize = function() {
 
 Pokemon.prototype.setImage = function() {
     if(this.isLeft) {
+        $('#pokemon-img-1').removeClass('attack-right');
+        $('#pokemon-img-1').removeClass('receive-attack-left');
         $('#pokemon-img-1').attr('src', this.imageSrc);
-        $('#pokemon-img-1').show();
+        $('#pokemon-img-1').fadeIn();
     } else {
+        $('#pokemon-img-1').removeClass('attack-left');
+        $('#pokemon-img-1').removeClass('receive-attack-right');
         $('#pokemon-img-2').attr('src', this.imageSrc);
-        $('#pokemon-img-2').show();
+        $('#pokemon-img-2').fadeIn();
     }
 }
 
@@ -65,17 +69,35 @@ Pokemon.prototype.setAttackButtons = function() {
 
 Pokemon.prototype.attackMovement = function(numberAttack) {
     if(this.isLeft) {
-        $('#pokemon-img-1').css("left","32%");
+        $('#pokemon-img-1').addClass('attack-right');
         setTimeout(function() {
-            $('#pokemon-img-1').css("left","22%"); 
+            $('#pokemon-img-1').removeClass('attack-right');
         }, 1000);
+        
     } else {
-        $('#pokemon-img-2').css("right","32%");
+        $('#pokemon-img-2').addClass('attack-left');
         setTimeout(function() {
-            $('#pokemon-img-2').css("right","22%"); 
+            $('#pokemon-img-2').removeClass('attack-left');
         }, 1000);
-    }  
+    }
 }
+
+Pokemon.prototype.receiveMovement = function(numberAttack) {
+    if(this.isLeft) {
+        $('#pokemon-img-1').addClass('receive-attack-left');
+        setTimeout(function() {
+            $('#pokemon-img-1').removeClass('receive-attack-left');
+        }, 1000);
+        
+    } else {
+        $('#pokemon-img-2').addClass('receive-attack-right');
+        setTimeout(function() {
+            $('#pokemon-img-2').removeClass('receive-attack-right');
+        }, 1000);
+    }
+}
+
+
 
 Pokemon.prototype.updateLife = function () {
     if(this.isLeft) {
@@ -85,6 +107,16 @@ Pokemon.prototype.updateLife = function () {
         $('#pokemon-ps-2').text("Life: " + this.ps + "/100");
         $('#pokemon-health-2').attr("value", this.ps);
     }
+}
+
+Pokemon.prototype.dissapearPokemon = function() {
+    setTimeout(function() {
+        if(this.isLeft) {
+            $('#pokemon-img-1').fadeOut();
+        } else {
+            $('#pokemon-img-2').fadeOut();
+        }
+    }.bind(this), 1000)
 }
 
 //END Rendering logic

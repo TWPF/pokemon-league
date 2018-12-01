@@ -41,35 +41,45 @@ Battle.prototype.turnsGame = function() {
 
 
   Battle.prototype.clickAttackPokemon1 = function(numberAttack) {
-    this.player1.pokemon[0].attackMovement(numberAttack);
-    var pointsLife = this.player1.pokemon[0].attackPoints(numberAttack);
-    this.player2.pokemon[0].receiveAttack(pointsLife);
-    if(this.player2.pokemon[0].isAlive()) {
+      console.log(this.player1.pokemon);
+      var pointsLife = this.player1.pokemon[0].attackPoints(numberAttack);
+      this.player2.pokemon[0].receiveAttack(pointsLife);
+      this.player1.pokemon[0].attackMovement(numberAttack);
       this.toggleActivePokemon();
+
+    if(this.player2.pokemon[0].isAlive()) {      
+      this.player2.pokemon[0].receiveMovement();
     } else {
       this.player2.deadPokemon();
       if (this.player2.pokemon.length === 0) {
           this.player2.losesBattle();
           this.player1.winsBattle();
       } else {
+        setTimeout(function() {
           this.player2.changePokemon();
+        }.bind(this), 1200);
       }
     }
   }
   
-  Battle.prototype.clickAttackPokemon2 = function(numberAttack) {
-    this.player2.pokemon[0].attackMovement(numberAttack);
+  Battle.prototype.clickAttackPokemon2 = function(numberAttack) { 
+    console.log(this.player2.pokemon);
     var pointsLife = this.player2.pokemon[0].attackPoints(numberAttack);
     this.player1.pokemon[0].receiveAttack(pointsLife);
+    this.player2.pokemon[0].attackMovement(numberAttack);
+    this.toggleActivePokemon();
+
     if(this.player1.pokemon[0].isAlive()) {
-      this.toggleActivePokemon();
+      this.player1.pokemon[0].receiveMovement();
     } else {
       this.player1.deadPokemon();
       if (this.player1.pokemon.length === 0) {
           this.player1.losesBattle();
           this.player2.winsBattle();
       } else {
+        setTimeout(function() {
           this.player1.changePokemon();
+        }.bind(this), 1200);
       }
     }
   }
