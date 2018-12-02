@@ -144,7 +144,8 @@ Pokemon.prototype.attackMessage = function(numberAttack, points) {
 
 //Game logic
 
-Pokemon.prototype.attackPoints = function() {
+Pokemon.prototype.attackPoints = function(numberAttack) {
+    this.movements[numberAttack].powerpoints--;
     return Math.floor(Math.random() * 26) + 10;
 }
 
@@ -167,8 +168,13 @@ Pokemon.prototype.isDead = function() {
 }
 
 Pokemon.prototype.hasAnimation = function(numberAttack) {
-    console.log(this.movements[numberAttack].classAnimation);
     return this.movements[numberAttack].classAnimation === undefined;
+}
+
+Pokemon.prototype.checkPPAttack = function(numberAttack) {
+    // if(this.movements[numberAttack].powerpoints === 0) {
+    //     console.log(this.movements[numberAttack]);
+    // }
 }
 
 //END Game logic

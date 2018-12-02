@@ -16,6 +16,8 @@ body {
 
 #pokeball-1, #pokeball-2, #pokeball-3, #pokeball-4, #pokeball-5, #pokeball-6 {
   transform: scale3d(1.2, 1.1, 0.3);
+  margin-top: -14%;
+  /* margin-bottom: -8%; */
 }
 
 #pokemon-img-1 {
@@ -50,7 +52,7 @@ body {
 #pokemon-name-1, #pokemon-name-2 {
   font-size: 1.6rem;
   font-weight: bold;
-  margin: 1% 0;
+  margin: 0;
 }
 
 #message-1, #message-2 {
@@ -60,8 +62,8 @@ body {
 
 .player-panel-1 {
   position: fixed;
-  height: 25%;
-  width: 20%;
+  height: 28%;
+  width: 30%;
   bottom: 4%;
   left: 4%; 
   box-shadow:0px 0px 30px 5px #000;
@@ -76,9 +78,9 @@ body {
 
 .player-panel-2 {
   position: fixed;
-  height: 15%;
-  width: 20%;
-  top: 4%;
+  height: 18%;
+  width: 26%;
+  top: 6%;
   right: 4%;
   box-shadow:0px 0px 30px 5px #000;
   background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
@@ -95,8 +97,13 @@ body {
   box-shadow:0px 0px 50px 0px #ff0000;
 }
 
+.full {
+  width: 80%;
+  margin: auto;
+}
+
 .left, .right {
-  width: 35%;
+  width: 40%;
   margin: 1% 0;
 }
 
@@ -122,16 +129,12 @@ progress[value]::-webkit-progress-value {
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
-.full {
-  width: 70%;
-  margin: auto;
-}
-
 .player-panel-1 button, .player-panel-2 button {
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
   border: 1px solid #000;
   box-shadow: 0 8px 6px -6px black;
   padding: 0;
+  font-size: 1rem;
 }
 
 .player-panel-1 p, .player-panel-1 span, .player-panel-2 p, .player-panel-2 span {
@@ -141,11 +144,11 @@ progress[value]::-webkit-progress-value {
 
 .status-panel {
   position: fixed;
-  height: 14%;
-  width: 24%;
-  bottom: 10%;
+  height: 18%;
+  width: 26%;
+  bottom: 8%;
   right: 50%;
-  margin-right: -12%;
+  margin-right: -13%;
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
   display: flex;
   align-items: center;
@@ -156,7 +159,7 @@ progress[value]::-webkit-progress-value {
 
 .status-panel p {
   margin: auto;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
   color: #FFF;

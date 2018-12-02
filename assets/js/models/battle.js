@@ -1,9 +1,9 @@
 function Battle() {
   
   this.pokemon1 = new Charizard(1);
-  this.pokemon2 = new Pikachu(1);
+  this.pokemon2 = new Blastoise(1);
   this.pokemon3 = new Charizard(1);
-  this.pokemon4 = new Blastoise(2);
+  this.pokemon4 = new Pikachu(2);
   this.pokemon5 = new Pikachu(2);
   this.pokemon6 = new Charizard(2);
   this.player1 = new Player('Javi', 1, this.pokemon1, this.pokemon2, this.pokemon3);
@@ -39,12 +39,15 @@ Battle.prototype.turnsGame = function() {
 
   Battle.prototype.attackPokemon1 = function(numberAttack) {
     this.blockAttackButtons();
-    var pointsLife = this.player1.pokemon[0].attackPoints();
+
+    var pointsLife = this.player1.pokemon[0].attackPoints(numberAttack);
     this.player1.pokemon[0].attackMovement(numberAttack);
     this.player2.pokemon[0].receiveAttack(pointsLife);
     this.toggleActivePokemon();
     this.player1.pokemon[0].attackMessage(numberAttack, pointsLife);    
     
+    this.player1.pokemon[0].checkPPAttack(numberAttack);
+
     if(this.player2.pokemon[0].isAlive()) {  
       this.player2.pokemon[0].receiveMovement();
     } else {
@@ -61,11 +64,13 @@ Battle.prototype.turnsGame = function() {
   }
   
   Battle.prototype.attackPokemon2 = function(numberAttack) { 
-    var pointsLife = this.player2.pokemon[0].attackPoints();
+    var pointsLife = this.player2.pokemon[0].attackPoints(numberAttack);
     this.player2.pokemon[0].attackMovement(numberAttack);
     this.player1.pokemon[0].receiveAttack(pointsLife);
     this.toggleActivePokemon();
     this.player2.pokemon[0].attackMessage(numberAttack, pointsLife);
+
+    this.player2.pokemon[0].checkPPAttack(numberAttack);
     
     if(this.player1.pokemon[0].isAlive()) { 
       this.player1.pokemon[0].receiveMovement();

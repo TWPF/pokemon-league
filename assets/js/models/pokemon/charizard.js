@@ -3,7 +3,7 @@ function Charizard(playerPosition) {
     "Charizard", 
     "./assets/img/charizard.gif", 
     "fire", 
-    [new Flamethrower(), new Scratch(), new Inferno(), new Earthquake],
+    [new Flamethrower(), new Scratch(), new Inferno(), new Move("Earthquake")],
      playerPosition);
 }
 

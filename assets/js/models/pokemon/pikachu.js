@@ -3,7 +3,7 @@ function Pikachu(playerPosition) {
     "Pikachu", 
     "./assets/img/pikachu.gif",
     "electric",
-    [new Move("Thunderbolt"), new Move('Slam'), new Move('Agility'), new Move('Thunder Punch')], 
+    [new Thunderbolt(), new Move('Slam'), new Move('Agility'), new Thunderstorm()], 
     playerPosition);
 }
 
