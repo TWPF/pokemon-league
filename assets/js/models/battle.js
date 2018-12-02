@@ -38,6 +38,7 @@ Battle.prototype.turnsGame = function() {
 
 
   Battle.prototype.attackPokemon1 = function(numberAttack) {
+    this.blockAttackButtons();
     var pointsLife = this.player1.pokemon[0].attackPoints();
     this.player1.pokemon[0].attackMovement(numberAttack);
     this.player2.pokemon[0].receiveAttack(pointsLife);
@@ -89,5 +90,14 @@ Battle.prototype.turnsGame = function() {
       $('.player-panel-2').removeClass('panel-active');
       $('.player-panel-1').addClass('panel-active');
     }
+  }
+
+  Battle.prototype.blockAttackButtons = function() {
+    PLAYER1_SELECTORS.forEach(function(selector) {
+      $(selector).prop('disabled', true);
+      setTimeout(function() {
+        $(selector).prop('disabled', false);
+      }, 3000);
+    })
   }
 
