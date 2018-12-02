@@ -1,5 +1,7 @@
 /* ANIMATIONS */
 
+/* DEFAULT ATTACK */
+
 .attack-right {
   animation: attack-right 0.9s;
 }
@@ -42,6 +44,8 @@
   }
 }
 
+/* RECEIVE ATTACK */
+
 .receive-attack-right {
   animation: receive-attack-right 0.9s;
 }
@@ -81,36 +85,170 @@
 }
 
 
+/* HYDRO ATTACK */
 
 .hydro-left {
   animation: hydro-left 1s;
+  width: 10%;
 }
 
 @keyframes hydro-left {
-  to {
-    left: 70%;
+  10% {
+    left: 60%;
+    visibility: hidden;
   }
+
+  20% {
+    left: 30%;
+    visibility: visible;
+  }
+
+  30% {
+    left: 60%;
+    visibility: hidden;
+  }
+  
+  40% {
+    left: 30%;
+    visibility: visible;
+  }
+
+  50% {
+    left: 70%;
+    visibility: hidden;
+  }
+
+  60% {
+    left: 30%;
+    top: 40%;
+    visibility: visible;
+  }
+
+  70% {
+    left: 60%;
+    top: 48%;
+    visibility: hidden;
+  }
+
+  80% {
+    left: 50%;
+    top: 40%;
+    width: 25%;
+    visibility: visible;
+  }
+
+  90% {
+    left: 60%;
+    visibility: hidden;
+  }
+
+  to {
+    top: 48%;
+    width: 10%;
+    transform: rotate(20deg);
+  }
+
 }
 
 .hydro-right {
   animation: hydro-right 1s;
+  width: 10%;
+  transform: rotate(180deg);
 }
 
 @keyframes hydro-right {
-  to {
-    right: 70%;
+  10% {
+    right: 60%;
+    visibility: hidden;
   }
+
+  20% {
+    right: 30%;
+    visibility: visible;
+  }
+
+  30% {
+    right: 60%;
+    visibility: hidden;
+  }
+  
+  40% {
+    right: 30%;
+    visibility: visible;
+  }
+
+  50% {
+    right: 70%;
+    visibility: hidden;
+  }
+
+  60% {
+    right: 30%;
+    top: 40%;
+    visibility: visible;
+  }
+
+  70% {
+    right: 60%;
+    top: 48%;
+    visibility: hidden;
+  }
+
+  80% {
+    right: 50%;
+    top: 40%;
+    width: 25%;
+    visibility: visible;
+  }
+
+  90% {
+    right: 60%;
+    visibility: hidden;
+  }
+
+  to {
+    top: 48%;
+    width: 10%;
+  }
+
 }
 
 
+/* FLAME ATTACK  */
 
 .flame-left {
   animation: flame-left 1s;
 }
 
 @keyframes flame-left {
+  50% {
+    left: 70%;
+    width: 10%;
+  }
+
+  60% {
+    left: 85%;
+    top: 40%;
+    transform: rotate(120deg);
+  }
+
+  70% {
+    left: 65%;
+    top: 48%;
+    transform: rotate(90deg);
+  }
+
+  80% {
+    left: 80%;
+    top: 40%;
+    width: 20%;
+  }
+
   to {
     left: 70%;
+    top: 48%;
+    width: 5%;
+    transform: rotate(20deg);
   }
 }
 
@@ -120,12 +258,40 @@
 }
 
 @keyframes flame-right {
+  
+  50% {
+    right: 70%;
+    width: 10%;
+  }
+
+  60% {
+    right: 85%;
+    top: 40%;
+    transform: rotate(60deg);
+  }
+
+  70% {
+    right: 65%;
+    top: 48%;
+    transform: rotate(120deg);
+  }
+
+  80% {
+    right: 80%;
+    top: 40%;
+    width: 20%;
+  }
+
   to {
     right: 70%;
+    top: 48%;
+    width: 5%;
+    transform: rotate(20deg);
   }
 }
 
 
+/* SCRATCH ATTACK */
 
 .scratch-left {
   animation: scratch-left 1s;
@@ -133,8 +299,31 @@
 
 @keyframes scratch-left {
 
+  50% {
+    left: 70%;
+    width: 5%;
+  }
+
+  60% {
+    left: 85%;
+    top: 40%;
+  }
+
+  70% {
+    left: 65%;
+    top: 48%;
+  }
+
+  80% {
+    left: 80%;
+    top: 55%;
+    width: 10%;
+  }
+
   to {
     left: 70%;
+    top: 48%;
+    width: 3%;
   }
 }
 
@@ -145,13 +334,36 @@
 
 @keyframes scratch-right {
 
+  50% {
+    right: 70%;
+    width: 5%;
+  }
+
+  60% {
+    right: 85%;
+    top: 40%;
+  }
+
+  70% {
+    right: 65%;
+    top: 48%;
+  }
+
+  80% {
+    right: 80%;
+    top: 55%;
+    width: 10%;
+  }
+
   to {
     right: 70%;
+    top: 48%;
+    width: 3%;
   }
 }
 
 
-
+/* BITE ATTACK */
 
 .bite-left {
   animation: bite-left 1s;
@@ -159,8 +371,31 @@
 
 @keyframes bite-left {
 
+  50% {
+    left: 70%;
+    width: 5%;
+  }
+
+  60% {
+    left: 85%;
+    top: 40%;
+  }
+
+  70% {
+    left: 65%;
+    top: 48%;
+  }
+
+  80% {
+    left: 80%;
+    top: 55%;
+    width: 10%;
+  }
+
   to {
     left: 70%;
+    top: 48%;
+    width: 3%;
   }
 }
 
@@ -171,8 +406,31 @@
 
 @keyframes bite-right {
 
+  50% {
+    right: 70%;
+    width: 5%;
+  }
+
+  60% {
+    right: 85%;
+    top: 40%;
+  }
+
+  70% {
+    right: 65%;
+    top: 48%;
+  }
+
+  80% {
+    right: 80%;
+    top: 55%;
+    width: 10%;
+  }
+
   to {
     right: 70%;
+    top: 48%;
+    width: 3%;
   }
 }
 
