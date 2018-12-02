@@ -67,20 +67,38 @@ Pokemon.prototype.setAttackButtons = function() {
 
 //Rendering logic
 
-Pokemon.prototype.attackMovement = function() {
+Pokemon.prototype.attackMovement = function(numberAttack) {
     if(this.isLeft) {
-        $('#pokemon-img-1').addClass('attack-right');
-        setTimeout(function() {
-            $('#pokemon-img-1').removeClass('attack-right');
-        }, 1000);
-        
+        if(!this.hasAnimation(numberAttack)) {
+            $('#attack-1').addClass(this.movements[numberAttack].classAnimation + '-left');
+            $('#attack-1').attr('src', this.movements[numberAttack].imageSrc);
+            setTimeout(function() {
+                $('#attack-1').removeClass(this.movements[numberAttack].classAnimation + '-left');
+                $('#attack-1').removeAttr('src');
+            }.bind(this), 1000);  
+        } else {
+            $('#pokemon-img-1').addClass('attack-right');
+            setTimeout(function() {
+                $('#pokemon-img-1').removeClass('attack-right');
+            }, 1000);
+        }
     } else {
-        $('#pokemon-img-2').addClass('attack-left');
-        setTimeout(function() {
-            $('#pokemon-img-2').removeClass('attack-left');
-        }, 1000);
+        if(!this.hasAnimation(numberAttack)) {
+            $('#attack-2').addClass(this.movements[numberAttack].classAnimation + '-right');
+            $('#attack-2').attr('src', this.movements[numberAttack].imageSrc);
+            setTimeout(function() {
+                $('#attack-2').removeClass(this.movements[numberAttack].classAnimation + '-right');
+                $('#attack-2').removeAttr('src');
+            }.bind(this), 1000);
+        } else {
+            $('#pokemon-img-2').addClass('attack-left');
+            setTimeout(function() {
+                $('#pokemon-img-2').removeClass('attack-left');
+            }, 1000);
+        }
     }
 }
+
 
 Pokemon.prototype.receiveMovement = function(numberAttack) {
     if(this.isLeft) {
@@ -146,6 +164,11 @@ Pokemon.prototype.isAlive = function() {
 Pokemon.prototype.isDead = function() {
     this.ps = 0;
     this.updateLife();
+}
+
+Pokemon.prototype.hasAnimation = function(numberAttack) {
+    console.log(this.movements[numberAttack].classAnimation);
+    return this.movements[numberAttack].classAnimation === undefined;
 }
 
 //END Game logic

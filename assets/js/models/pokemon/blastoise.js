@@ -3,7 +3,7 @@ function Blastoise(playerPosition) {
     "Blastoise",
     "./assets/img/blastoise.gif",
     "water",
-    [new Move("Hydro pump"), new Move('Bite'), new Move('Skull Bash'), new Move('Rapid spin')],
+    [new Hydropump(), new Bite(), new Skullbash(), new Rapidspin()],
     playerPosition);
 }
 

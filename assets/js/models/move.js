@@ -1,4 +1,7 @@
-function Move(name) {
+function Move(name, imageSrc, classAnimation) {
   this.name = name;
+  this.classAnimation = classAnimation;
+  this.imageSrc = imageSrc;
 }
+
 

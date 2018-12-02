@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Signika:400,600,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/animations.css">
   <title>Pokemon League</title>
 </head> 
 <body>
@@ -15,6 +16,8 @@
     <div id="battle-elements">
       <img id="pokemon-img-1">
       <img id="pokemon-img-2">
+      <img id="attack-1">
+      <img id="attack-2">
     
       <div class="player-panel-1 panel-active">
         <div class="full">
@@ -58,14 +61,24 @@
     </div>
   </div>
 
-  
+  <audio src="assets/sounds/characters-selector.mp3" autoplay>
+
+  </audio>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="assets/js/constants.js"></script>
   <script src="assets/js/models/move.js"></script>
+  <script src="assets/js/models/moves/hydropump.js"></script>
+  <script src="assets/js/models/moves/bite.js"></script>
+  <script src="assets/js/models/moves/skullbash.js"></script>
+  <script src="assets/js/models/moves/rapidspin.js"></script>
+  <script src="assets/js/models/moves/flamethrower.js"></script>
+  <script src="assets/js/models/moves/scratch.js"></script>
+  <script src="assets/js/models/moves/inferno.js"></script>
+  <script src="assets/js/models/moves/earthquake.js"></script>
   <script src="assets/js/models/pokemon.js"></script>
   <script src="assets/js/models/pokemon/pikachu.js"></script>
   <script src="assets/js/models/pokemon/charizard.js"></script>
-  <script src="assets/js/models/pokemon/mewtwo.js"></script>
   <script src="assets/js/models/pokemon/blastoise.js"></script>
   <script src="assets/js/models/player.js"></script>
   <script src="assets/js/models/battle.js"></script>

@@ -20,15 +20,30 @@ body {
 
 #pokemon-img-1 {
   position: fixed;
-  top: 27%;
-  left: 28%;
+  width: 15rem;
+  top: 38%;
+  left: 18%;
   transform: scaleX(-1);
 }
 
 #pokemon-img-2 {
   position: fixed;
-  top: 27%;
-  right: 28%;
+  width: 15rem;
+  top: 38%;
+  right: 18%;
+}
+
+
+#attack-1 {
+  position: fixed;
+  top: 48%;
+  left: 30%;
+}
+
+#attack-2 {
+  position: fixed;
+  top: 48%;
+  right: 30%;
 }
 
 
@@ -47,8 +62,8 @@ body {
   position: fixed;
   height: 12rem;
   width: 22rem;
-  bottom: 4%;
-  left: 4%; 
+  bottom: 2%;
+  left: 2%; 
   border: 2px solid #000;
   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   opacity: 0.95;
@@ -63,7 +78,7 @@ body {
   position: fixed;
   height: 9rem;
   width: 22rem;
-  bottom: 9%;
+  top: 4%;
   right: 4%;
   border: 2px solid #000;
   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
@@ -126,9 +141,9 @@ progress[value]::-webkit-progress-value {
 .status-panel {
   position: fixed;
   height: 6rem;
-  width: 20rem;
-  bottom: 12%;
-  right: 38%;
+  width: 22rem;
+  bottom: 10%;
+  right: 36%;
   border: 2px solid #000;
   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   opacity: 0.95;
@@ -143,84 +158,4 @@ progress[value]::-webkit-progress-value {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-}
-
-
-
-/* ANIMATIONS */
-
-.attack-right {
-  animation: attack-right 1s;
-}
-
-@keyframes attack-right {
-  25% {
-    top: 15%;
-  }
-  
-  50% {
-    left: 58%;
-    top: 27%;
-  }
-
-  to {
-    left: 28%;
-  }
-}
-
-.attack-left {
-  animation: attack-left 1s;
-}
-
-@keyframes attack-left {
-  25% {
-    top: 15%;
-  }
-
-  50% {
-    right: 58%;
-    top: 27%;
-  }
-
-  to {
-    right: 28%;
-  }
-}
-
-.receive-attack-right {
-  animation: receive-attack-right 1s;
-}
-
-@keyframes receive-attack-right {
-  25% {
-    top: 18%;
-  }
-  
-  50% {
-    right: 22%;
-    top: 27%;
-  }
-
-  to {
-    right: 28%;
-  }
-}
-
-.receive-attack-left {
-  animation: receive-attack-left 1s;
-}
-
-@keyframes receive-attack-left {
-  25% {
-    top: 18%;
-  }
-  
-  50% {
-    left: 22%;
-    top: 27%;
-  }
-
-  to {
-    left: 28%;
-  }
 }

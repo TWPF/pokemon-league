@@ -18,6 +18,11 @@ Player.prototype.changePokemon = function() {
   this.updatePokeball();
 }
 
+Player.prototype.changeMachinePokemon = function() {
+  this.pokemon[0].initializeMachine();
+  this.updatePokeball();
+}
+
 Player.prototype.losesBattle = function() {
   this.updatePokeball();
   this.clearPanel();

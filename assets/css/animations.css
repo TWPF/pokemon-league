@@ -1,0 +1,178 @@
+/* ANIMATIONS */
+
+.attack-right {
+  animation: attack-right 0.9s;
+}
+
+@keyframes attack-right {
+  50% {
+    left: 25%;
+    top: 10%;
+  }
+
+  80% {
+    left: 60%;
+    top: 32%;
+  }
+
+  to {
+    top: 38%;
+    left: 18%;
+  }
+}
+
+.attack-left {
+  animation: attack-left 1s;
+}
+
+@keyframes attack-left {
+  50% {
+    right: 25%;
+    top: 10%;
+  }
+
+  80% {
+    right: 60%;
+    top: 32%;
+  }
+
+  to {
+    top: 38%;
+    right: 18%;
+  }
+}
+
+.receive-attack-right {
+  animation: receive-attack-right 0.9s;
+}
+
+@keyframes receive-attack-right {
+
+  70% {
+    right: 18%;
+  }
+
+  90% {
+    right: 10%;
+  }
+
+  to {
+    right: 18%;
+  }
+}
+
+.receive-attack-left {
+  animation: receive-attack-left 0.9s;
+}
+
+@keyframes receive-attack-left {
+
+  70% {
+    left: 18%;
+  }
+
+  90% {
+    left: 10%;
+  }
+
+  to {
+    left: 18%;
+  }
+}
+
+
+
+.hydro-left {
+  animation: hydro-left 1s;
+}
+
+@keyframes hydro-left {
+  to {
+    left: 70%;
+  }
+}
+
+.hydro-right {
+  animation: hydro-right 1s;
+}
+
+@keyframes hydro-right {
+  to {
+    right: 70%;
+  }
+}
+
+
+
+.flame-left {
+  animation: flame-left 1s;
+}
+
+@keyframes flame-left {
+  to {
+    left: 70%;
+  }
+}
+
+.flame-right {
+  animation: flame-right 1s;
+  transform: scaleX(-1);
+}
+
+@keyframes flame-right {
+  to {
+    right: 70%;
+  }
+}
+
+
+
+.scratch-left {
+  animation: scratch-left 1s;
+}
+
+@keyframes scratch-left {
+
+  to {
+    left: 70%;
+  }
+}
+
+.scratch-right {
+  animation: scratch-right 1s;
+  transform: scaleX(-1);
+}
+
+@keyframes scratch-right {
+
+  to {
+    right: 70%;
+  }
+}
+
+
+
+
+.bite-left {
+  animation: bite-left 1s;
+}
+
+@keyframes bite-left {
+
+  to {
+    left: 70%;
+  }
+}
+
+.bite-right {
+  animation: bite-right 1s;
+  transform: scaleX(-1);
+}
+
+@keyframes bite-right {
+
+  to {
+    right: 70%;
+  }
+}
+
