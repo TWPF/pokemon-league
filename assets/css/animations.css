@@ -578,3 +578,73 @@
     transform: rotate(20deg);
   }
 }
+
+
+/* NIGHTMARE ATTACK */
+
+.nightmare-left {
+  animation: nightmare-left 1s;
+}
+
+@keyframes nightmare-left {
+
+  50% {
+    left: 70%;
+    width: 5%;
+  }
+
+  60% {
+    left: 85%;
+    top: 35%;
+  }
+
+  70% {
+    left: 65%;
+    top: 45%;
+  }
+
+  80% {
+    left: 80%;
+    width: 25%;
+  }
+
+  to {
+    left: 70%;
+    top: 35%;
+    width: 3%;
+  }
+}
+
+.nightmare-right {
+  animation: nightmare-right 1s;
+  transform: scaleX(-1);
+}
+
+@keyframes nightmare-right {
+
+  50% {
+    right: 70%;
+    width: 5%;
+  }
+
+  60% {
+    right: 85%;
+    top: 35%;
+  }
+
+  70% {
+    right: 65%;
+    top: 45%;
+  }
+
+  80% {
+    right: 80%;
+    width: 25%;
+  }
+
+  to {
+    right: 70%;
+    top: 35%;
+    width: 3%;
+  }
+}

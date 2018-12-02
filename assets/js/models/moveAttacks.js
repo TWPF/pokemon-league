@@ -73,3 +73,25 @@ function Thunderstorm() {
 }
 
 Thunderstorm.prototype = Object.create(Move.prototype);
+
+
+function Nightmare() {
+  Move.call(this,
+  "Nightmare",
+  "./assets/img/nightmare.png",
+  "nightmare",
+  );
+}
+
+Nightmare.prototype = Object.create(Move.prototype);
+
+
+function Shadowball() {
+  Move.call(this,
+  "Shadow Ball",
+  "./assets/img/nightmare.png",
+  "nightmare",
+  );
+}
+
+Shadowball.prototype = Object.create(Move.prototype);
