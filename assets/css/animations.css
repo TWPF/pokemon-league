@@ -3,7 +3,7 @@
 /* DEFAULT ATTACK */
 
 .attack-right {
-  animation: attack-right 0.9s;
+  animation: attack-right 1s;
 }
 
 @keyframes attack-right {
@@ -43,6 +43,30 @@
     right: 18%;
   }
 }
+
+
+/* DEFAULT ATTACK */
+
+.attack-basic-right {
+  animation: attack-basic-right 1s;
+}
+
+@keyframes attack-basic-right {
+  50% {
+    left: 25%;
+  }
+}
+
+.attack-basic-left {
+  animation: attack-basic-left 1s;
+}
+
+@keyframes attack-basic-left {
+  50% {
+    right: 25%;
+  }
+}
+
 
 /* RECEIVE ATTACK */
 

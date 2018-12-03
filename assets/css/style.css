@@ -163,7 +163,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .status-panel p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-align: center;
   color: #FFF;

@@ -57,10 +57,8 @@ Pokemon.prototype.setPsPoints = function() {
 
 Pokemon.prototype.setAttackButtons = function() {
         for (var i = 0; i < 4; i++) {
-            $(PLAYER1_SELECTORS[i]).text(this.movements[i].name);
+            $(PLAYER1_SELECTORS[i]).text(this.movements[i].name + "  " + this.movements[i].powerpoints + "/5");
             $(PLAYER1_SELECTORS[i]).removeClass('disabled');
-
-
         }
 }
 
@@ -73,9 +71,11 @@ Pokemon.prototype.setAttackButtons = function() {
 Pokemon.prototype.attackMovement = function(numberAttack) {
     if(this.isLeft) {
         if(!this.hasAnimation(numberAttack)) {
+            $('#pokemon-img-1').addClass('attack-basic-right');
             $('#attack-1').addClass(this.movements[numberAttack].classAnimation + '-left');
             $('#attack-1').attr('src', this.movements[numberAttack].imageSrc);
             setTimeout(function() {
+                $('#pokemon-img-1').removeClass('attack-basic-right');
                 $('#attack-1').removeClass(this.movements[numberAttack].classAnimation + '-left');
                 $('#attack-1').removeAttr('src');
             }.bind(this), 1000);  
@@ -87,9 +87,11 @@ Pokemon.prototype.attackMovement = function(numberAttack) {
         }
     } else {
         if(!this.hasAnimation(numberAttack)) {
+            $('#pokemon-img-2').addClass('attack-basic-left');
             $('#attack-2').addClass(this.movements[numberAttack].classAnimation + '-right');
             $('#attack-2').attr('src', this.movements[numberAttack].imageSrc);
             setTimeout(function() {
+                $('#pokemon-img-2').removeClass('attack-basic-left');
                 $('#attack-2').removeClass(this.movements[numberAttack].classAnimation + '-right');
                 $('#attack-2').removeAttr('src');
             }.bind(this), 1000);
@@ -128,6 +130,12 @@ Pokemon.prototype.updateLife = function () {
     }
 }
 
+Pokemon.prototype.updateAttackButton = function (numberAttack) {
+    $(PLAYER1_SELECTORS[numberAttack]).text(this.movements[numberAttack].name + "  " + this.movements[numberAttack].powerpoints + "/5");
+}
+
+
+
 Pokemon.prototype.dissapearPokemon = function() {
     setTimeout(function() {
         if(this.isLeft) {
@@ -138,8 +146,18 @@ Pokemon.prototype.dissapearPokemon = function() {
     }.bind(this), 500)
 }
 
-Pokemon.prototype.attackMessage = function(numberAttack, points) {
-    $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + '. Quits ' + points + ' points of life.');
+Pokemon.prototype.attackMessage = function(numberAttack, points, pointsType) {
+    console.log(pointsType);
+    switch (pointsType) {
+        case 0.5: $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage. This attack is not very effective..");
+        break;
+        case 1: $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage.");
+        break;
+        case 2: $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage. This attack is very effective!");
+        break;
+        default: $('#status-message').text("");
+        break;
+    } 
 }
 
 //END Rendering logic
@@ -149,6 +167,7 @@ Pokemon.prototype.attackMessage = function(numberAttack, points) {
 
 Pokemon.prototype.attackPoints = function(numberAttack) {
     this.movements[numberAttack].powerpoints--;
+    this.updateAttackButton(numberAttack);
     return Math.floor(Math.random() * 35) + 10;
 }
 
@@ -175,14 +194,12 @@ Pokemon.prototype.hasAnimation = function(numberAttack) {
 }
 
 Pokemon.prototype.checkPPAttack = function(numberAttack) {
-    console.log(this.movements[numberAttack].powerpoints);
     if(this.movements[numberAttack].powerpoints <= 0) {
         $(PLAYER1_SELECTORS[numberAttack]).addClass('disabled');
     }
 }
 
 Pokemon.prototype.valueTypePokemon = function(typeOfDefendedPokemon, numberAttack) {
-    console.log(this.type);
     if (this.type === 'physic') {
         switch (typeOfDefendedPokemon) {
             case 'physic': return 0.5; break;
@@ -263,7 +280,7 @@ Pokemon.prototype.valueTypePokemon = function(typeOfDefendedPokemon, numberAttac
     }
     if (this.type === 'ghost') {
         switch (typeOfDefendedPokemon) {
-            case 'physic': return 0; break;
+            case 'physic': return 0.5; break;
             case 'ice': return 1; break;
             case 'water': return 1; break;
             case 'fire': return 1; break;

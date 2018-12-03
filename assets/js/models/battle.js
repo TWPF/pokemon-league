@@ -28,10 +28,10 @@ Battle.prototype.turnsGame = function() {
   PLAYER1_SELECTORS.forEach(function(selector, index) {
     $(selector).on("click", function() {
         this.attackPokemon1(index);
-        setTimeout(function() {
-          var randomAttack = Math.floor(Math.random() * 3);
-          this.attackPokemon2(randomAttack);
-        }.bind(this), 2000);
+          setTimeout(function() {
+            var randomAttack = Math.floor(Math.random() * 3);
+            this.attackPokemon2(randomAttack);
+          }.bind(this), 2000);
     }.bind(this));
   }.bind(this));
 }
@@ -40,12 +40,12 @@ Battle.prototype.attackPokemon1 = function(numberAttack) {
   this.blockAttackButtons();
 
   var pointsLife = this.player1.pokemon[0].attackPoints(numberAttack);
-  console.log(this.player2.pokemon[0].type)
-  pointsLife *= this.player1.pokemon[0].valueTypePokemon(this.player2.pokemon[0].type, numberAttack);
+  var pointsType = this.player1.pokemon[0].valueTypePokemon(this.player2.pokemon[0].type, numberAttack);
+  pointsLife *= pointsType;
   this.player1.pokemon[0].attackMovement(numberAttack);
   this.player2.pokemon[0].receiveAttack(pointsLife);
   this.toggleActivePokemon();
-  this.player1.pokemon[0].attackMessage(numberAttack, pointsLife); 
+  this.player1.pokemon[0].attackMessage(numberAttack, pointsLife, pointsType); 
 
   this.player1.pokemon[0].checkPPAttack(numberAttack);
 
@@ -66,11 +66,12 @@ Battle.prototype.attackPokemon1 = function(numberAttack) {
 
 Battle.prototype.attackPokemon2 = function(numberAttack) { 
   var pointsLife = this.player2.pokemon[0].attackPoints(numberAttack);
-  pointsLife *= this.player2.pokemon[0].valueTypePokemon(this.player1.pokemon[0].type, numberAttack);
+  var pointsType = this.player2.pokemon[0].valueTypePokemon(this.player1.pokemon[0].type, numberAttack);
+  pointsLife *= pointsType;
   this.player2.pokemon[0].attackMovement(numberAttack);
   this.player1.pokemon[0].receiveAttack(pointsLife);
   this.toggleActivePokemon();
-  this.player2.pokemon[0].attackMessage(numberAttack, pointsLife);
+  this.player2.pokemon[0].attackMessage(numberAttack, pointsLife, pointsType);
   
   if(this.player1.pokemon[0].isAlive()) { 
     this.player1.pokemon[0].receiveMovement();
