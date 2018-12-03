@@ -137,6 +137,11 @@ progress[value]::-webkit-progress-value {
   font-size: 1rem;
 }
 
+.disabled {
+  pointer-events: none;
+  background-image: linear-gradient(90deg, #29323c 0%, #8d96a0 100%);  color: #FFF;
+}
+
 .player-panel-1 p, .player-panel-1 span, .player-panel-2 p, .player-panel-2 span {
   text-align: center;
 }
@@ -151,14 +156,13 @@ progress[value]::-webkit-progress-value {
   margin-right: -13%;
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   padding: 2%;
   box-shadow:0px 0px 30px 5px #000;
 }
 
 .status-panel p {
-  margin: auto;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;

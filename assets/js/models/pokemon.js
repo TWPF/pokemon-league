@@ -58,6 +58,9 @@ Pokemon.prototype.setPsPoints = function() {
 Pokemon.prototype.setAttackButtons = function() {
         for (var i = 0; i < 4; i++) {
             $(PLAYER1_SELECTORS[i]).text(this.movements[i].name);
+            $(PLAYER1_SELECTORS[i]).removeClass('disabled');
+
+
         }
 }
 
@@ -146,7 +149,7 @@ Pokemon.prototype.attackMessage = function(numberAttack, points) {
 
 Pokemon.prototype.attackPoints = function(numberAttack) {
     this.movements[numberAttack].powerpoints--;
-    return Math.floor(Math.random() * 26) + 10;
+    return Math.floor(Math.random() * 35) + 10;
 }
 
 Pokemon.prototype.receiveAttack = function (pointsAttack) {
@@ -172,9 +175,118 @@ Pokemon.prototype.hasAnimation = function(numberAttack) {
 }
 
 Pokemon.prototype.checkPPAttack = function(numberAttack) {
-    // if(this.movements[numberAttack].powerpoints === 0) {
-    //     console.log(this.movements[numberAttack]);
-    // }
+    console.log(this.movements[numberAttack].powerpoints);
+    if(this.movements[numberAttack].powerpoints <= 0) {
+        $(PLAYER1_SELECTORS[numberAttack]).addClass('disabled');
+    }
+}
+
+Pokemon.prototype.valueTypePokemon = function(typeOfDefendedPokemon, numberAttack) {
+    console.log(this.type);
+    if (this.type === 'physic') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 0.5; break;
+            case 'ice': return 1; break;
+            case 'water': return 1; break;
+            case 'fire': return 1; break;
+            case 'flying': return 1; break;
+            case 'dragon': return 1; break;
+            case 'ghost': return 1; break;
+            case 'electric': return 1; break;
+            default: return 1; break;
+        }
+    }
+    if (this.type === 'ice') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 1; break;
+            case 'ice': return 0.5; break;
+            case 'water': return 0.5; break;
+            case 'fire': return 1; break;
+            case 'flying': return 2; break;
+            case 'dragon': return 2; break;
+            case 'ghost': return 1; break;
+            case 'electric': return 1; break;
+            default: return 1; break;
+        }
+    }
+    if (this.type === 'water') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 1; break;
+            case 'ice': return 1; break;
+            case 'water': return 0.5; break;
+            case 'fire': return 2; break;
+            case 'flying': return 1; break;
+            case 'dragon': return 0.5; break;
+            case 'ghost': return 1; break;
+            case 'electric': return 1; break;
+            default: return 1; break;
+        }
+    }
+    if (this.type === 'fire') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 1; break;
+            case 'ice': return 2; break;
+            case 'water': return 0.5; break;
+            case 'fire': return 0.5; break;
+            case 'flying': return 1; break;
+            case 'dragon': return 0.5; break;
+            case 'ghost': return 1; break;
+            case 'electric': return 1; break;
+            default: return 1; break;
+        }
+    }
+    if (this.type === 'flying') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 1; break;
+            case 'ice': return 1; break;
+            case 'water': return 1; break;
+            case 'fire': return 1; break;
+            case 'flying': return 1; break;
+            case 'dragon': return 1; break;
+            case 'ghost': return 1; break;
+            case 'electric': return 0.5; break;
+            default: return 1; break;
+        }
+    }
+    if (this.type === 'dragon') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 1; break;
+            case 'ice': return 1; break;
+            case 'water': return 1; break;
+            case 'fire': return 1; break;
+            case 'flying': return 1; break;
+            case 'dragon': return 2; break;
+            case 'ghost': return 1; break;
+            case 'electric': return 1; break;
+            default: return 1; break;
+        }
+    }
+    if (this.type === 'ghost') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 0; break;
+            case 'ice': return 1; break;
+            case 'water': return 1; break;
+            case 'fire': return 1; break;
+            case 'flying': return 1; break;
+            case 'dragon': return 1; break;
+            case 'ghost': return 2; break;
+            case 'electric': return 1; break;
+            default: return 1; break;
+        }
+    }
+    if (this.type === 'electric') {
+        switch (typeOfDefendedPokemon) {
+            case 'physic': return 1; break;
+            case 'ice': return 1; break;
+            case 'water': return 2; break;
+            case 'fire': return 1; break;
+            case 'flying': return 2; break;
+            case 'dragon': return 0.5; break;
+            case 'ghost': return 1; break;
+            case 'electric': return 0.5; break;
+            default: return 1; break;
+        }
+    }
 }
 
 //END Game logic
