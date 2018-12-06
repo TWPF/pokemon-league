@@ -1,6 +1,6 @@
 function CharactersSelector() {
 
-  this.pokemonList = [new Blastoise(), new Charizard(), new Gengar(), new Pikachu(), new Charizard(), new Blastoise()];
+  this.pokemonList = [new Blastoise(), new Charizard(), new Gengar(), new Pikachu(), new Dodrio(), new Alakazam(), new Dragonite(), new Gyarados(), new Lapras(), new Magikarp(), new Mrmime(), new Articuno(), new Moltres(), new Zapdos()];
   this.pokemonElected = [];
 
   this.$characterSelector = $('#characters-selector');
