@@ -204,10 +204,12 @@ progress[value]::-webkit-progress-value {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 30px;
+  margin: 10px;
 }
 
 .pokemon-element h3 {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -225,14 +227,85 @@ progress[value]::-webkit-progress-value {
   align-items: center;
   justify-content: center;
   height: 10%;
-  width: 26%;
+  width: 18%;
   bottom: 10%;
   right: 50%;
-  margin-right: -13%;
+  margin-right: -9%;
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
   box-shadow:0px 0px 30px 5px #000;
 }
 
 .pokeball-container img {
   height: 50%;
+}
+
+.confirmation-start {
+  position: fixed;
+  height: 65%;
+  width: 60%;
+  top: 10%;
+  right: 50%;
+  margin-right: -30%;
+  background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
+  color: #FFF;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  box-shadow: 0px 0px 30px 5px #000;
+}
+
+.confirmation-start h2 {
+  font-size: 1.6rem;
+}
+
+.pokemon-elected {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.pokemon-element-elected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.pokemon-element-elected h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #FFF;
+}
+
+.pokemon-element-elected img {
+  max-width: 80%;
+}
+
+.buttons-confirmation {
+  margin: 2rem 0;
+}
+
+#select-again {
+  background: linear-gradient(to right, #e65c00 95%, #f9d423 100%);
+  color: #FFF;
+  height: 3rem;
+}
+
+#selector-start {
+  width: 10rem;
+  background: linear-gradient(to right,#93291e  90%,#ed213a 100%);
+  color: #FFF;
+  height: 3rem;
+  margin-left: 5rem;
+  font-size: 1.4rem;
 }
