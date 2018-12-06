@@ -9,6 +9,11 @@ function Battle() {
   this.player1 = new Player('Javi', 1, this.pokemon1, this.pokemon2, this.pokemon3);
   this.player2 = new Player('Machine', 2, this.pokemon4, this.pokemon5, this.pokemon6);
 
+  this.$characterSelector = $('#characters-selector');
+  this.$battleElements = $('#battle-elements');
+
+  this.$playerPanel1 = $('.player-panel-1');
+  this.$playerPanel2 = $('.player-panel-2');
 }
 
 Battle.prototype.start = function() {
@@ -19,19 +24,19 @@ Battle.prototype.start = function() {
 }
 
 Battle.prototype.initializeBattleBoard = function() {
-  $('#characters-selector').hide();
-  $('#battle-elements').css('visibility', 'visible');
+  this.$characterSelector.hide();
+  this.$battleElements.css('visibility', 'visible');
 }
 
 Battle.prototype.turnsGame = function() {
   // Set Listeners for player 1
   PLAYER1_SELECTORS.forEach(function(selector, index) {
     $(selector).on("click", function() {
-        this.attackPokemon1(index);
-          setTimeout(function() {
-            var randomAttack = Math.floor(Math.random() * 3);
-            this.attackPokemon2(randomAttack);
-          }.bind(this), 2000);
+      this.attackPokemon1(index);
+      setTimeout(function() {
+        var randomAttack = Math.floor(Math.random() * 3);
+        this.attackPokemon2(randomAttack);
+      }.bind(this), 3000);
     }.bind(this));
   }.bind(this));
 }
@@ -89,12 +94,12 @@ Battle.prototype.attackPokemon2 = function(numberAttack) {
 }
 
   Battle.prototype.toggleActivePokemon = function() {
-    if($('.player-panel-1').hasClass('panel-active')) {
-      $('.player-panel-1').removeClass('panel-active');
-      $('.player-panel-2').addClass('panel-active');
+    if(this.$playerPanel1.hasClass('panel-active')) {
+      this.$playerPanel1.removeClass('panel-active');
+      this.$playerPanel2.addClass('panel-active');
     } else {
-      $('.player-panel-2').removeClass('panel-active');
-      $('.player-panel-1').addClass('panel-active');
+      this.$playerPanel2.removeClass('panel-active');
+      this.$playerPanel1.addClass('panel-active');
     }
   }
 
@@ -103,7 +108,7 @@ Battle.prototype.attackPokemon2 = function(numberAttack) {
       $(selector).prop('disabled', true);
       setTimeout(function() {
         $(selector).prop('disabled', false);
-      }, 3000);
+      }, 3500);
     })
   }
 

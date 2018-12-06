@@ -4,7 +4,7 @@ function Charizard(playerPosition) {
     "./assets/img/charizard.gif", 
     "fire", 
     [new Flamethrower(), new Scratch(), new Inferno(), new Move("Earthquake")],
-     playerPosition);
+     playerPosition || 1);
 }
 
 Charizard.prototype = Object.create(Pokemon.prototype);

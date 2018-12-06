@@ -4,7 +4,7 @@ function Pikachu(playerPosition) {
     "./assets/img/pikachu.gif",
     "electric",
     [new Thunderbolt(), new Move('Slam'), new Move('Agility'), new Thunderstorm()], 
-    playerPosition);
+    playerPosition || 1);
 }
 
 Pikachu.prototype = Object.create(Pokemon.prototype);

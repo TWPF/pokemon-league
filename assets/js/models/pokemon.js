@@ -7,6 +7,20 @@ function Pokemon(name, imageSrc, type, movements, playerPosition) {
     this.movements = movements;
     this.isLeft = playerPosition === 1;
 
+    this.$pokemonImg1 = $('#pokemon-img-1');
+    this.$pokemonImg2 = $('#pokemon-img-2');
+    this.$pokemonName1 = $('#pokemon-name-1');
+    this.$pokemonName2 = $('#pokemon-name-2');
+    this.$pokemonPS1 = $('#pokemon-ps-1');
+    this.$pokemonPS2 = $('#pokemon-ps-2');
+    this.$pokemonHealth1 = $('#pokemon-health-1');
+    this.$pokemonHealth2 = $('#pokemon-health-2');
+
+    this.$attack1 = $('#attack-1');
+    this.$attack2 = $('#attack-2');
+
+    this.$statusMessage = $('#status-message');
+
 }   
 
 
@@ -27,31 +41,31 @@ Pokemon.prototype.initializeMachine = function() {
 
 Pokemon.prototype.setImage = function() {
     if(this.isLeft) {
-        $('#pokemon-img-1').removeClass('attack-right');
-        $('#pokemon-img-1').removeClass('receive-attack-left');
-        $('#pokemon-img-1').attr('src', this.imageSrc);
-        $('#pokemon-img-1').fadeIn(2000);
+        this.$pokemonImg1.removeClass('attack-right');
+        this.$pokemonImg1.removeClass('receive-attack-left');
+        this.$pokemonImg1.attr('src', this.imageSrc);
+        this.$pokemonImg1.fadeIn(2000);
     } else {
-        $('#pokemon-img-1').removeClass('attack-left');
-        $('#pokemon-img-1').removeClass('receive-attack-right');
-        $('#pokemon-img-2').attr('src', this.imageSrc);
-        $('#pokemon-img-2').fadeIn(2000);
+        this.$pokemonImg1.removeClass('attack-left');
+        this.$pokemonImg1.removeClass('receive-attack-right');
+        this.$pokemonImg2.attr('src', this.imageSrc);
+        this.$pokemonImg2.fadeIn(2000);
     }
 }
 
 Pokemon.prototype.setName = function() {
     if(this.isLeft) {
-        $('#pokemon-name-1').text(this.name);
+        this.$pokemonName1.text(this.name);
     } else {
-        $('#pokemon-name-2').text(this.name);
+        this.$pokemonName2.text(this.name);
     }
 }
 
 Pokemon.prototype.setPsPoints = function() {
     if(this.isLeft) {
-        $('#pokemon-ps-1').text("Life: " + this.ps + "/100");
+        this.$pokemonPS1.text("Life: " + this.ps + "/100");
     } else {
-        $('#pokemon-ps-2').text("Life: " + this.ps + "/100");
+        this.$pokemonPS2.text("Life: " + this.ps + "/100");
     }
 }
 
@@ -71,34 +85,34 @@ Pokemon.prototype.setAttackButtons = function() {
 Pokemon.prototype.attackMovement = function(numberAttack) {
     if(this.isLeft) {
         if(!this.hasAnimation(numberAttack)) {
-            $('#pokemon-img-1').addClass('attack-basic-right');
-            $('#attack-1').addClass(this.movements[numberAttack].classAnimation + '-left');
-            $('#attack-1').attr('src', this.movements[numberAttack].imageSrc);
+            this.$pokemonImg1.addClass('attack-basic-right');
+            this.$attack1.addClass(this.movements[numberAttack].classAnimation + '-left');
+            this.$attack1.attr('src', this.movements[numberAttack].imageSrc);
             setTimeout(function() {
-                $('#pokemon-img-1').removeClass('attack-basic-right');
-                $('#attack-1').removeClass(this.movements[numberAttack].classAnimation + '-left');
-                $('#attack-1').removeAttr('src');
+                this.$pokemonImg1.removeClass('attack-basic-right');
+                this.$attack1.removeClass(this.movements[numberAttack].classAnimation + '-left');
+                this.$attack1.removeAttr('src');
             }.bind(this), 1000);  
         } else {
-            $('#pokemon-img-1').addClass('attack-right');
+            this.$pokemonImg1.addClass('attack-right');
             setTimeout(function() {
-                $('#pokemon-img-1').removeClass('attack-right');
-            }, 1000);
+                this.$pokemonImg1.removeClass('attack-right');
+            }.bind(this), 1000);
         }
     } else {
         if(!this.hasAnimation(numberAttack)) {
-            $('#pokemon-img-2').addClass('attack-basic-left');
-            $('#attack-2').addClass(this.movements[numberAttack].classAnimation + '-right');
-            $('#attack-2').attr('src', this.movements[numberAttack].imageSrc);
+            this.$pokemonImg2.addClass('attack-basic-left');
+            this.$attack2.addClass(this.movements[numberAttack].classAnimation + '-right');
+            this.$attack2.attr('src', this.movements[numberAttack].imageSrc);
             setTimeout(function() {
-                $('#pokemon-img-2').removeClass('attack-basic-left');
-                $('#attack-2').removeClass(this.movements[numberAttack].classAnimation + '-right');
-                $('#attack-2').removeAttr('src');
+                this.$pokemonImg2.removeClass('attack-basic-left');
+                this.$attack2.removeClass(this.movements[numberAttack].classAnimation + '-right');
+                this.$attack2.removeAttr('src');
             }.bind(this), 1000);
         } else {
-            $('#pokemon-img-2').addClass('attack-left');
+            this.$pokemonImg2.addClass('attack-left');
             setTimeout(function() {
-                $('#pokemon-img-2').removeClass('attack-left');
+                this.$pokemonImg2.removeClass('attack-left');
             }, 1000);
         }
     }
@@ -107,26 +121,26 @@ Pokemon.prototype.attackMovement = function(numberAttack) {
 
 Pokemon.prototype.receiveMovement = function(numberAttack) {
     if(this.isLeft) {
-        $('#pokemon-img-1').addClass('receive-attack-left');
+        this.$pokemonImg1.addClass('receive-attack-left');
         setTimeout(function() {
-            $('#pokemon-img-1').removeClass('receive-attack-left');
-        }, 1000);
+            this.$pokemonImg1.removeClass('receive-attack-left');
+        }.bind(this), 1000);
         
     } else {
-        $('#pokemon-img-2').addClass('receive-attack-right');
+        this.$pokemonImg2.addClass('receive-attack-right');
         setTimeout(function() {
-            $('#pokemon-img-2').removeClass('receive-attack-right');
-        }, 1000);
+            this.$pokemonImg2.removeClass('receive-attack-right');
+        }.bind(this), 1000);
     }
 }
 
 Pokemon.prototype.updateLife = function () {
     if(this.isLeft) {
-        $('#pokemon-ps-1').text("Life: " + this.ps + "/100");
-        $('#pokemon-health-1').attr("value", this.ps);
+        this.$pokemonPS1.text("Life: " + this.ps + "/100");
+        this.$pokemonHealth1.attr("value", this.ps);
     } else {
-        $('#pokemon-ps-2').text("Life: " + this.ps + "/100");
-        $('#pokemon-health-2').attr("value", this.ps);
+        this.$pokemonPS2.text("Life: " + this.ps + "/100");
+        this.$pokemonHealth2.attr("value", this.ps);
     }
 }
 
@@ -139,23 +153,22 @@ Pokemon.prototype.updateAttackButton = function (numberAttack) {
 Pokemon.prototype.dissapearPokemon = function() {
     setTimeout(function() {
         if(this.isLeft) {
-            $('#pokemon-img-1').fadeOut();
+            this.$pokemonImg1.fadeOut();
         } else {
-            $('#pokemon-img-2').fadeOut();
+            this.$pokemonImg2.fadeOut();
         }
     }.bind(this), 500)
 }
 
 Pokemon.prototype.attackMessage = function(numberAttack, points, pointsType) {
-    console.log(pointsType);
     switch (pointsType) {
-        case 0.5: $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage. This attack is not very effective..");
+        case 0.5: this.$statusMessage.text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage. This attack is not very effective..");
         break;
-        case 1: $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage.");
+        case 1: this.$statusMessage.text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage.");
         break;
-        case 2: $('#status-message').text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage. This attack is very effective!");
+        case 2: this.$statusMessage.text(this.name + ' attacks with ' + this.movements[numberAttack].name + " and causes " + points + " points of damage. This attack is very effective!");
         break;
-        default: $('#status-message').text("");
+        default: this.$statusMessage.text("");
         break;
     } 
 }
@@ -167,7 +180,6 @@ Pokemon.prototype.attackMessage = function(numberAttack, points, pointsType) {
 
 Pokemon.prototype.attackPoints = function(numberAttack) {
     this.movements[numberAttack].powerpoints--;
-    this.updateAttackButton(numberAttack);
     return Math.floor(Math.random() * 35) + 10;
 }
 
@@ -194,6 +206,7 @@ Pokemon.prototype.hasAnimation = function(numberAttack) {
 }
 
 Pokemon.prototype.checkPPAttack = function(numberAttack) {
+    this.updateAttackButton(numberAttack);
     if(this.movements[numberAttack].powerpoints <= 0) {
         $(PLAYER1_SELECTORS[numberAttack]).addClass('disabled');
     }

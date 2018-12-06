@@ -168,3 +168,71 @@ progress[value]::-webkit-progress-value {
   text-align: center;
   color: #FFF;
 }
+
+
+/* CHARACTERS SCREEN SELECTOR */
+
+#characters-container {
+  position: fixed;
+  height: 60%;
+  width: 76%;
+  top: 15%;
+  right: 50%;
+  margin-right: -38%;
+  background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  box-shadow:0px 0px 30px 5px #000;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.pokemon-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-element h3 {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.pokemon-element img {
+  max-width: 80%;
+}
+
+.active-li {
+  box-shadow:0px 0px 30px 5px rgb(255, 0, 0);
+}
+
+.pokeball-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 26%;
+  bottom: 10%;
+  right: 50%;
+  margin-right: -13%;
+  background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
+  box-shadow:0px 0px 30px 5px #000;
+}
+
+.pokeball-container img {
+  height: 50%;
+}

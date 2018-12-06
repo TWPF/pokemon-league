@@ -4,7 +4,7 @@ function Gengar(playerPosition) {
     "./assets/img/gengar.gif", 
     "ghost", 
     [new Nightmare(), new Move("Hex"), new Thunderstorm(), new Shadowball()],
-     playerPosition);
+     playerPosition || 1);
 }
 
 Gengar.prototype = Object.create(Pokemon.prototype);
