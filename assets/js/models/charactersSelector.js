@@ -3,6 +3,7 @@ function CharactersSelector() {
   this.pokemonList = [new Blastoise(), new Charizard(), new Gengar(), new Pikachu(), new Dodrio(), new Alakazam(), new Dragonite(), new Gyarados(), new Lapras(), new Magikarp(), new Mrmime(), new Articuno(), new Moltres(), new Zapdos()];
   this.pokemonElected = [];
 
+  this.$startScreen = $('#start-screen');
   this.$characterSelector = $('#characters-selector');
   this.$battleElements = $('#battle-elements');
 
@@ -11,7 +12,7 @@ function CharactersSelector() {
   
   this.$confirmationStart = $('.confirmation-start');
   this.$chooseAgainButton = $('#select-again');
-  this.$startButton = $('#selector-start');
+  this.$startCharacterButton = $('#selector-start');
 
 
 }
@@ -21,9 +22,10 @@ CharactersSelector.prototype.start = function() {
 }
 
 CharactersSelector.prototype.initializeCharacterScreen = function() {
+  this.$startScreen.hide();
   this.$battleElements.hide();
   this.$confirmationStart.hide();
-  this.$characterSelector.show();
+  this.$characterSelector.fadeIn();
   this.pokemonList.forEach(function(pokemon) {
     var pokemonLi = $('<li></li>').addClass('pokemon-element');
     var pokemonImg = $('<img>').attr('src', 'assets/img/' + pokemon.name + '.gif');
@@ -77,7 +79,7 @@ CharactersSelector.prototype.setConfirmationListeners = function() {
   this.$chooseAgainButton.click(function() {
     this.chooseAgain();
   }.bind(this));
-  this.$startButton.click(function() {
+  this.$startCharacterButton.click(function() {
     this.startGame();
   }.bind(this));
 

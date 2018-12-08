@@ -13,6 +13,12 @@
 </head> 
 <body>
 
+  <div id="start-screen" class="move-background">
+    <img class="start-title move-title" src="assets/img/title.png"/>
+    <img id="flying-pokemon" class="move-pokemon" src="assets/img/charizard.gif"/>
+    <button id="start-button">START GAME</button>
+  </div>
+
   <div id="characters-selector">
     <div id="character-elements">
       <img class="title" src="assets/img/title.png"/>
@@ -87,8 +93,6 @@
     </div>
   </div>
 
-
-
   <audio src="assets/sounds/characters-selector.mp3" autoplay>
 
   </audio>
@@ -115,6 +119,7 @@
   <script src="assets/js/models/player.js"></script>
   <script src="assets/js/models/charactersSelector.js"></script>
   <script src="assets/js/models/battle.js"></script>
+  <script src="assets/js/models/start.js"></script>
   <script src="assets/js/index.js"></script>
 </body>
 </html>

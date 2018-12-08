@@ -1,11 +1,6 @@
 window.onload = function() {
 
-  var CharactersScreen = new CharactersSelector();
+  var startGame = new Start();
 
-  CharactersScreen.start();
-
-  // var mainBattle = new Battle();
-
-  // mainBattle.start();
-
+  startGame.start();
 }
