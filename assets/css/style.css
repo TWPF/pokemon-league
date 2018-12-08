@@ -4,20 +4,20 @@ html {
 }
 
 body {
-  font-family: 'Signika', sans-serif;
+  font-family: 'Permanent Marker', 'Signika', sans-serif;
+  min-width: 900px;
+}
+
+#battle-board {
   background: url('../img/bg-battle.jpg') no-repeat fixed;
   background-position: 50% 50%; 
   background-size: cover;
 }
 
-#battle-elements {
-  visibility: hidden;
-}
 
 #pokeball-1, #pokeball-2, #pokeball-3, #pokeball-4, #pokeball-5, #pokeball-6 {
   transform: scale3d(1.2, 1.1, 0.3);
   margin-top: -14%;
-  /* margin-bottom: -8%; */
 }
 
 #pokemon-img-1 {
@@ -172,20 +172,59 @@ progress[value]::-webkit-progress-value {
 
 /* CHARACTERS SCREEN SELECTOR */
 
+#characters-selector {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url('../img/bg-sky.png') no-repeat fixed;
+  background-position: 50% 50%; 
+  background-size: cover;
+  z-index: 1;
+}
+
+.title {
+  position: fixed;
+  width: 20%;
+  height: 20%;
+  top: 2%;
+  left: 50%;
+  margin-left: -10%;
+}
+
 #characters-container {
   position: fixed;
-  height: 60%;
-  width: 76%;
-  top: 15%;
+  height: 50%;
+  width: 70%;
+  top: 25%;
   right: 50%;
-  margin-right: -38%;
-  background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
+  margin-right: -35%;
+  background-image: linear-gradient(120deg, #29323c 0%, #485563 100%);  color: #FFF;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   padding: 3%;
-  box-shadow:0px 0px 30px 5px #000;
+  box-shadow:0px 0px 30px 5px #FFF;
+  overflow-y: scroll;
+}
+
+#characters-container h1 {
+  color: #D62929;
+}
+
+#characters-container::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+#characters-container::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
 }
 
 .pokemon-list {
@@ -198,7 +237,6 @@ progress[value]::-webkit-progress-value {
   text-align: center;
   box-sizing: border-box;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .pokemon-element {
@@ -227,12 +265,12 @@ progress[value]::-webkit-progress-value {
   align-items: center;
   justify-content: center;
   height: 10%;
-  width: 18%;
-  bottom: 10%;
+  width: 16%;
+  bottom: 8%;
   right: 50%;
-  margin-right: -9%;
+  margin-right: -8%;
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
-  box-shadow:0px 0px 30px 5px #000;
+  box-shadow:0px 0px 30px 5px #FFF;
 }
 
 .pokeball-container img {
@@ -241,11 +279,11 @@ progress[value]::-webkit-progress-value {
 
 .confirmation-start {
   position: fixed;
-  height: 65%;
-  width: 60%;
-  top: 10%;
+  height: 50%;
+  width: 50%;
+  top: 25%;
   right: 50%;
-  margin-right: -30%;
+  margin-right: -25%;
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
   color: #FFF;
   text-align: center;
@@ -254,11 +292,12 @@ progress[value]::-webkit-progress-value {
   flex-direction: column;
   align-items: center;
   padding: 3%;
-  box-shadow: 0px 0px 30px 5px #000;
+  box-shadow: 0px 0px 30px 5px #FFF;
 }
 
 .confirmation-start h2 {
   font-size: 1.6rem;
+  color: #D62929;
 }
 
 .pokemon-elected {
