@@ -5,6 +5,7 @@ function CharactersSelector() {
 
   this.$startScreen = $('#start-screen');
   this.$characterSelector = $('#characters-selector');
+  this.$loadingScreen = $('.loading-screen');
   this.$battleBoard = $('#battle-board');
 
   this.$pokeballContainer = $('.pokeball-container');
@@ -23,6 +24,7 @@ CharactersSelector.prototype.start = function() {
 
 CharactersSelector.prototype.initializeCharacterScreen = function() {
   this.$startScreen.hide();
+  this.$loadingScreen.hide();
   this.$battleBoard.hide();
   this.$confirmationStart.hide();
   this.$characterSelector.fadeIn();

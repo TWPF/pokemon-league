@@ -11,6 +11,7 @@ function Battle(pokemonElected) {
 
   this.$startBackground = $('.start-background');
   this.$characterSelector = $('#characters-selector');
+  this.$loadingScreen = $('.loading-screen');
   this.$battleBoard = $('#battle-board');
 
   this.$playerPanel1 = $('.player-panel-1');
@@ -18,6 +19,11 @@ function Battle(pokemonElected) {
 
   this.battleMusicSrc = "assets/sounds/battle.mp3";
   this.$backgroundSound = $('#background-sound');
+
+  this.$loadingValue = $('#loading-value');
+  this.loadingBarPoints = 0;
+
+  this.framesCount = 0;
 }
 
 Battle.prototype.start = function() {
@@ -29,8 +35,32 @@ Battle.prototype.start = function() {
 
 Battle.prototype.initializeBattleBoard = function() {
   this.$startBackground.remove();
-  this.$battleBoard.fadeIn();
-  this.loadBattleMusic();
+  this.$loadingScreen.show();
+
+  setInterval(function() {
+    this.framesCount++;
+    if(this.framesCount === 2) {
+      this.loadingBarPoints += 0.2;
+      this.$loadingValue.attr("value", this.loadingBarPoints);
+      this.framesCount = 0;
+    }
+    if(this.loadingBarPoints === 100) {
+      clearInterval();
+    }
+  }.bind(this), 8);
+  
+  setTimeout(function() {
+    this.loadBattleMusic();
+  }.bind(this), 6000);
+
+  setTimeout(function() {
+    this.$battleBoard.fadeIn(2000);
+  }.bind(this), 9000);
+
+}
+
+Battle.prototype.loadingScreen = function() {
+
 }
 
 Battle.prototype.loadBattleMusic = function() {

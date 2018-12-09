@@ -2,7 +2,7 @@ function Start() {
   this.$characterSelector = $('#characters-selector');
   this.$battleBoard = $('#battle-board');
   this.$startScreen = $('#start-screen');
-
+  this.$loadingScreen = $('.loading-screen');
   this.$startButton = $('#start-button');
   this.$flyingPokemon = $('#flying-pokemon');
 }
@@ -13,6 +13,7 @@ Start.prototype.start = function() {
 
 Start.prototype.initializeStartScreen = function() {
   this.$characterSelector.hide();
+  this.$loadingScreen.hide();
   this.$battleBoard.hide();
   this.$startScreen.show();
   this.$startButton.click(function() {
