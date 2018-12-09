@@ -21,6 +21,11 @@ function Pokemon(name, imageSrc, type, movements, playerPosition) {
 
     this.$statusMessage = $('#status-message');
 
+    this.$backgroundSound = $('#background-sound');
+    this.$effectSound = $('#effect-sound');
+
+    this.attackLeftSound = "assets/sounds/attack-left.mp3";
+    this.attackRightSound = "assets/sounds/attack-right.mp3";
 }   
 
 
@@ -92,11 +97,13 @@ Pokemon.prototype.attackMovement = function(numberAttack) {
                 this.$pokemonImg1.removeClass('attack-basic-right');
                 this.$attack1.removeClass(this.movements[numberAttack].classAnimation + '-left');
                 this.$attack1.removeAttr('src');
+                this.$effectSound.attr('src', this.attackLeftSound);
             }.bind(this), 1000);  
         } else {
             this.$pokemonImg1.addClass('attack-right');
             setTimeout(function() {
                 this.$pokemonImg1.removeClass('attack-right');
+                this.$effectSound.attr('src', this.attackLeftSound);
             }.bind(this), 1000);
         }
     } else {
@@ -108,11 +115,13 @@ Pokemon.prototype.attackMovement = function(numberAttack) {
                 this.$pokemonImg2.removeClass('attack-basic-left');
                 this.$attack2.removeClass(this.movements[numberAttack].classAnimation + '-right');
                 this.$attack2.removeAttr('src');
+                this.$effectSound.attr('src', this.attackRightSound);
             }.bind(this), 1000);
         } else {
             this.$pokemonImg2.addClass('attack-left');
             setTimeout(function() {
                 this.$pokemonImg2.removeClass('attack-left');
+                this.$effectSound.attr('src', this.attackRightSound);
             }.bind(this), 1000);
         }
     }

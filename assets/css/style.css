@@ -8,6 +8,9 @@ body {
   min-width: 900px;
 }
 
+
+
+
 /* START & CHARACTER  */
 
 .start-background {
@@ -35,6 +38,18 @@ body {
   right: 2%;
   background-image: linear-gradient(120deg, #29323c 0%, #485563 100%);  color: #FFF;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* START SCREEN */
 
@@ -80,6 +95,19 @@ body {
   transform: rotate(5deg);
   z-index: 2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* CHARACTERS SCREEN SELECTOR */
 
@@ -291,8 +319,7 @@ body {
   width: 50%;
   height: 15%;
   margin-right: -25%;
-  background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
-  box-shadow:0px 0px 30px 5px #000;
+  background-image: transparent;
   align-items: center;
   justify-content: center;
   flex-flow: column;

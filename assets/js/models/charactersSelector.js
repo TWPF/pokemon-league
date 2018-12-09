@@ -15,7 +15,8 @@ function CharactersSelector() {
   this.$chooseAgainButton = $('#select-again');
   this.$startCharacterButton = $('#selector-start');
 
-
+  this.$effectSound = $('#effect-sound');
+  this.selectSoundSrc = 'assets/sounds/selection.mp3';
 }
 
 CharactersSelector.prototype.start = function() {
@@ -46,6 +47,7 @@ CharactersSelector.prototype.initializeCharacterScreen = function() {
 
 CharactersSelector.prototype.addPokemon = function(clickedLi, pokemon) {
   $(clickedLi).addClass('active-li');
+  this.$effectSound.attr('src', this.selectSoundSrc);
   this.$pokeballContainer.append(this.$pokeballItem);
   this.pokemonElected.push(pokemon);  
   if (this.checkIfThereIs3Pokemon()) {

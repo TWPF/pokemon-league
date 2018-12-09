@@ -3,6 +3,8 @@ function Player(name, playerPosition, pokemon1, pokemon2, pokemon3) {
   this.pokemon = [pokemon1, pokemon2, pokemon3];
   this.playerPosition = playerPosition;
   this.isLeft = playerPosition === 1;
+  this.$backgroundSound = $('#background-sound');
+  this.winSoundSrc = "assets/sounds/victory.mp3";
 }
 
 Player.prototype.initialize = function() {
@@ -32,6 +34,13 @@ Player.prototype.losesBattle = function() {
 Player.prototype.winsBattle = function() {
   this.clearPanel();
   this.winMessage();
+  if (this.isLeft) {
+    setTimeout(function() {
+      this.$backgroundSound.attr('src', this.winSoundSrc);
+    }.bind(this), 2000);
+  } else {
+    this.$backgroundSound.animate({volume: 0}, 5000);
+  }
 }
 
 Player.prototype.deadPokemon = function() {
