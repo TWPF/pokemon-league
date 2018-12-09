@@ -113,7 +113,7 @@ Pokemon.prototype.attackMovement = function(numberAttack) {
             this.$pokemonImg2.addClass('attack-left');
             setTimeout(function() {
                 this.$pokemonImg2.removeClass('attack-left');
-            }, 1000);
+            }.bind(this), 1000);
         }
     }
 }

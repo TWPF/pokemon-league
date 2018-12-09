@@ -5,7 +5,7 @@ function CharactersSelector() {
 
   this.$startScreen = $('#start-screen');
   this.$characterSelector = $('#characters-selector');
-  this.$battleElements = $('#battle-elements');
+  this.$battleBoard = $('#battle-board');
 
   this.$pokeballContainer = $('.pokeball-container');
   this.$pokeballItem = '<img src="assets/img/pokeball.png" />';
@@ -23,7 +23,7 @@ CharactersSelector.prototype.start = function() {
 
 CharactersSelector.prototype.initializeCharacterScreen = function() {
   this.$startScreen.hide();
-  this.$battleElements.hide();
+  this.$battleBoard.hide();
   this.$confirmationStart.hide();
   this.$characterSelector.fadeIn();
   this.pokemonList.forEach(function(pokemon) {
@@ -46,7 +46,6 @@ CharactersSelector.prototype.addPokemon = function(clickedLi, pokemon) {
   $(clickedLi).addClass('active-li');
   this.$pokeballContainer.append(this.$pokeballItem);
   this.pokemonElected.push(pokemon);  
-  console.log(this.checkIfThereIs3Pokemon());
   if (this.checkIfThereIs3Pokemon()) {
     this.initializeConfirmScreen();
   }
@@ -63,7 +62,6 @@ CharactersSelector.prototype.checkIfThereIs3Pokemon = function () {
 }
 
 CharactersSelector.prototype.initializeConfirmScreen = function() {
-  console.log(this.pokemonElected);
   this.pokemonElected.forEach(function(pokemon) {
     var pokemonLi = $('<li></li>').addClass('pokemon-element-elected');
     var pokemonImg = $('<img>').attr('src', 'assets/img/' + pokemon.name + '.gif');
@@ -101,5 +99,9 @@ CharactersSelector.prototype.emptyPokemonElectedArray = function() {
 }
 
 CharactersSelector.prototype.startGame = function() {
+  setTimeout(function() {
+    var battle = new Battle (this.pokemonElected);
+    battle.start();
+  }.bind(this), 1000)
 
 }

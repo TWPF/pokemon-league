@@ -1,19 +1,23 @@
-function Battle() {
+function Battle(pokemonElected) {
   
-  this.pokemon1 = new Gengar(1);
-  this.pokemon2 = new Blastoise(1);
-  this.pokemon3 = new Pikachu(1);
-  this.pokemon4 = new Charizard(2);
-  this.pokemon5 = new Pikachu(2);
-  this.pokemon6 = new Gengar(2);
+  this.pokemon1 = pokemonElected[0];
+  this.pokemon2 = pokemonElected[1];
+  this.pokemon3 = pokemonElected[2];
+  this.pokemon4 = new Lapras(2);
+  this.pokemon5 = new Articuno(2);
+  this.pokemon6 = new Mrmime(2);
   this.player1 = new Player('Javi', 1, this.pokemon1, this.pokemon2, this.pokemon3);
   this.player2 = new Player('Machine', 2, this.pokemon4, this.pokemon5, this.pokemon6);
 
+  this.$startBackground = $('.start-background');
   this.$characterSelector = $('#characters-selector');
-  this.$battleElements = $('#battle-elements');
+  this.$battleBoard = $('#battle-board');
 
   this.$playerPanel1 = $('.player-panel-1');
   this.$playerPanel2 = $('.player-panel-2');
+
+  this.battleMusicSrc = "assets/sounds/battle.mp3";
+  this.$backgroundSound = $('#background-sound');
 }
 
 Battle.prototype.start = function() {
@@ -24,8 +28,13 @@ Battle.prototype.start = function() {
 }
 
 Battle.prototype.initializeBattleBoard = function() {
-  this.$characterSelector.hide();
-  this.$battleElements.css('visibility', 'visible');
+  this.$startBackground.remove();
+  this.$battleBoard.fadeIn();
+  this.loadBattleMusic();
+}
+
+Battle.prototype.loadBattleMusic = function() {
+  this.$backgroundSound.attr('src', this.battleMusicSrc);
 }
 
 Battle.prototype.turnsGame = function() {

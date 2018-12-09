@@ -1,6 +1,6 @@
 function Start() {
   this.$characterSelector = $('#characters-selector');
-  this.$battleElements = $('#battle-elements');
+  this.$battleBoard = $('#battle-board');
   this.$startScreen = $('#start-screen');
 
   this.$startButton = $('#start-button');
@@ -13,7 +13,7 @@ Start.prototype.start = function() {
 
 Start.prototype.initializeStartScreen = function() {
   this.$characterSelector.hide();
-  this.$battleElements.hide();
+  this.$battleBoard.hide();
   this.$startScreen.show();
   this.$startButton.click(function() {
     this.loadCharacterScreen();

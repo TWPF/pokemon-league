@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Signika:400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -13,43 +14,51 @@
 </head> 
 <body>
 
-  <div id="start-screen" class="move-background">
-    <img class="start-title move-title" src="assets/img/title.png"/>
-    <img id="flying-pokemon" class="move-pokemon" src="assets/img/charizard.gif"/>
-    <button id="start-button">START GAME</button>
-  </div>
 
-  <div id="characters-selector">
-    <div id="character-elements">
-      <img class="title" src="assets/img/title.png"/>
-      <div id="characters-container">
-        <h1>Choose three Pokemon for the Battle!</h1>
-        <div>
-          <ul class="pokemon-list">
+  <div class="start-background">
 
-          </ul>
-        </div>
-      </div>
+    <div id="start-screen">
+      <img class="start-title move-title" src="assets/img/title.png"/>
+      <img id="flying-pokemon" class="move-pokemon" src="assets/img/charizard.gif"/>
+      <button id="start-button">START GAME</button>
+    </div>
 
-      <div class="pokeball-container">
-      </div>
+    <div id="characters-selector">
+      <div id="character-elements">
+        <img class="title" src="assets/img/title.png"/>
+        <div id="characters-container">
+          <h1>Choose three Pokemon for the Battle!</h1>
+          <div>
+            <ul class="pokemon-list">
 
-      <div class="confirmation-start">
-        <h2>Do you want to start a new adventure with this Pokemon?</h2>
-        <div>
-          <ul class="pokemon-elected">
-
-          </ul>
-        </div>
-        <div class="buttons-confirmation">
-          <button class="btn" id="select-again">Choose Again</button>
-          <button class="btn" id="selector-start">START</button>
+            </ul>
+          </div>
         </div>
 
-      </div>
+        <div class="pokeball-container">
+        </div>
 
+        <div class="confirmation-start">
+          <h2>Do you want to start a new battle with this Pokemon?</h2>
+          <div>
+            <ul class="pokemon-elected">
+
+            </ul>
+          </div>
+          <div class="buttons-confirmation">
+            <button class="btn" id="select-again">Choose Again</button>
+            <button class="btn" id="selector-start">START</button>
+          </div>
+
+        </div>
+      </div>
         
     </div>
+
+    <button class="music-on btn">
+        <i class="fas fa-volume-off"></i>
+    </button>
+
   </div>
 
   <div id="battle-board">
@@ -93,8 +102,10 @@
     </div>
   </div>
 
-  <audio src="assets/sounds/characters-selector.mp3" autoplay>
+  <audio id="background-sound" src="assets/sounds/start.mp3" autoplay>
+  </audio>
 
+  <audio id="effect-sound" autoplay>
   </audio>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

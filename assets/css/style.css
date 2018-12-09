@@ -8,6 +8,27 @@ body {
   min-width: 900px;
 }
 
+/* START & CHARACTER  */
+
+.start-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url('../img/bg-sky.png') repeat-x fixed;
+  background-position: 0px 0px;
+  background-size: cover;
+  animation: move-background 300s linear;
+}
+
+.music-on {
+  position: fixed;
+  top: 3%;
+  right: 2%;
+  border-radius: 50%;
+  background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
+}
 
 /* START SCREEN */
 
@@ -17,9 +38,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: url('../img/bg-sky.png') repeat-x fixed;
-  background-position: 0px 0px;
-  background-size: cover;
 }
 
 .start-title {
@@ -33,11 +51,11 @@ body {
 
 #start-button {
   position: fixed;
-  width: 14%;
-  height: 8%;
+  width: 18%;
+  height: 10%;
   top: 70%;
   right: 50%;
-  margin-right: -7%;
+  margin-right: -9%;
   border-radius: 50px;
   font-size: 1.5rem;
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
@@ -51,8 +69,8 @@ body {
 
 #flying-pokemon {
   position: fixed;
-  top: 54%;
-  left: 48%;
+  top: 30%;
+  left: 60%;
   transform: rotate(5deg);
   z-index: 2;
 }
@@ -65,9 +83,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: url('../img/bg-sky.png') no-repeat fixed;
-  background-position: 50% 50%; 
-  background-size: cover;
   z-index: 1;
 }
 
@@ -128,8 +143,8 @@ body {
 
 .pokemon-element {
   flex: 20%;
-  border-radius: 30px;
-  margin: 10px;
+  border-radius: 50%;
+  margin: 20px;
   max-width: 20%;
 }
 
@@ -142,8 +157,13 @@ body {
   max-width: 80%;
 }
 
+.pokemon-element:hover {
+  color: #D62929;
+}
+
 .active-li {
   box-shadow:0px 0px 30px 5px rgb(255, 0, 0);
+  color: #D62929;
 }
 
 .pokeball-container {
@@ -166,7 +186,7 @@ body {
 
 .confirmation-start {
   position: fixed;
-  height: 50%;
+  /* height: 50%; */
   width: 50%;
   top: 25%;
   right: 50%;
@@ -248,6 +268,11 @@ body {
   background: url('../img/bg-battle.jpg') no-repeat fixed;
   background-position: 50% 50%; 
   background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -371,6 +396,7 @@ progress[value]::-webkit-progress-value {
   box-shadow: 0 8px 6px -6px black;
   padding: 0;
   font-size: 1rem;
+  font-family: 'Signika';
 }
 
 .disabled {
@@ -396,6 +422,7 @@ progress[value]::-webkit-progress-value {
   justify-content: center;
   padding: 2%;
   box-shadow:0px 0px 30px 5px #000;
+  font-family: 'Signika';
 }
 
 .status-panel p {

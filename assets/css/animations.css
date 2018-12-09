@@ -2,9 +2,7 @@
 
 /* START SCREEN */
 
-.move-background {
-  animation: move-background 300s linear;
-}
+
 
 @keyframes move-background {
   0% {
@@ -22,25 +20,20 @@
 
 @keyframes move-pokemon {
   0% {
-    top: 25%;
-    left: -10%;
-    transform: rotate(15deg);
+    top: 10%;
+    left: 110%;
+    transform: rotate(25deg);
   }
 
-  50% {
+  60% {
     top: 45%;
-    left: 20%;
-    transform: rotate(10deg);
-  }
-
-  90% {
-    top: 52%;
-    left: 42%;
+    left: 70%;
+    transform: rotate(12deg);
   }
 
   100% {
-    top: 54%;
-    left: 48%;
+    top: 30%;
+    left: 60%;
     transform: rotate(5deg);
   }
 }
