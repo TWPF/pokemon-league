@@ -24,10 +24,16 @@ body {
 
 .music-on {
   position: fixed;
-  top: 3%;
+  bottom: 3%;
   right: 2%;
-  border-radius: 50%;
-  background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
+  background-image: linear-gradient(120deg, #29323c 0%, #485563 100%);  color: #FFF;
+}
+
+.effects-on {
+  position: fixed;
+  bottom: 8%;
+  right: 2%;
+  background-image: linear-gradient(120deg, #29323c 0%, #485563 100%);  color: #FFF;
 }
 
 /* START SCREEN */

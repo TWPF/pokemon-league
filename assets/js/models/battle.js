@@ -36,7 +36,7 @@ Battle.prototype.start = function() {
 Battle.prototype.initializeBattleBoard = function() {
   this.$startBackground.remove();
   this.$loadingScreen.show();
-
+  this.$backgroundSound.animate({volume: 0}, 3000);
   setInterval(function() {
     this.framesCount++;
     if(this.framesCount === 2) {
@@ -56,15 +56,11 @@ Battle.prototype.initializeBattleBoard = function() {
   setTimeout(function() {
     this.$battleBoard.fadeIn(2000);
   }.bind(this), 9000);
-
-}
-
-Battle.prototype.loadingScreen = function() {
-
 }
 
 Battle.prototype.loadBattleMusic = function() {
   this.$backgroundSound.attr('src', this.battleMusicSrc);
+  this.$backgroundSound.animate({volume: 1}, 2000);
 }
 
 Battle.prototype.turnsGame = function() {
