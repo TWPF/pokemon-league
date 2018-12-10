@@ -3,7 +3,7 @@ function Alakazam(playerPosition) {
     "Alakazam",
     "./assets/img/alakazam.gif",
     "physic",
-    [new Move('Phychic'), new Move('Psybeam'), new Move("Telekinesis"), new Move('Hidden power')],
+    [new Phychic(), new Move('Psybeam'), new Move("Telekinesis"), new Hiddenpower()],
     playerPosition || 1);
 }
 

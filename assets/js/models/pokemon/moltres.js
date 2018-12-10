@@ -3,7 +3,7 @@ function Moltres(playerPosition) {
     "Moltres",
     "./assets/img/moltres.gif",
     "fire",
-    [new Flamethrower(), new Move('Ancient Power'), new Move("Sky Attack"), new Move('Hurricane')],
+    [new Flamethrower(), new Move('Ancient Power'), new Inferno(), new Hurricane()],
     playerPosition || 1);
 }
 

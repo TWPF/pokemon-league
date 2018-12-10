@@ -3,7 +3,7 @@ function Mrmime(playerPosition) {
     "Mr.Mime",
     "./assets/img/mr.mime.gif",
     "physic",
-    [new Move('Psywave'), new Move('Power Swap'), new Move("Mimic"), new Move('Phychic')],
+    [new Powerswap(), new Phychic(), new Move("Mimic"), new Move('Psywave')],
     playerPosition || 1);
 }
 

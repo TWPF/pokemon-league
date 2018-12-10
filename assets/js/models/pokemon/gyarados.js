@@ -3,7 +3,7 @@ function Gyarados(playerPosition) {
     "Gyarados",
     "./assets/img/gyarados.gif",
     "water",
-    [new Bite(), new Move('Ice fang'), new Hydropump(), new Move('Scary Face')],
+    [new Bite(), new Icefang(), new Hydropump(), new Scaryface()],
     playerPosition || 1);
 }
 Gyarados.prototype = Object.create(Pokemon.prototype);

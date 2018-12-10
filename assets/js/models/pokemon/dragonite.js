@@ -3,7 +3,7 @@ function Dragonite(playerPosition) {
     "Dragonite",
     "./assets/img/dragonite.gif",
     "dragon",
-    [new Move('Hurricane'), new Move('Dragon Rage'), new Move('Dragon Tail'), new Move('Fire Punch')],
+    [new Hurricane(), new Dragonrage(), new Move('Dragon Tail'), new Firepunch()],
     playerPosition || 1);
 }
 

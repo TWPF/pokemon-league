@@ -3,7 +3,7 @@ function Articuno(playerPosition) {
     "Articuno",
     "./assets/img/articuno.gif",
     "ice",
-    [new Move('Powder Snow'), new Move('Hail'), new Move("Hurricane"), new Move('Ice Beam')],
+    [new Powdersnow(), new Move('Hail'), new Hurricane(), new Icebeam()],
     playerPosition || 1);
 }
 

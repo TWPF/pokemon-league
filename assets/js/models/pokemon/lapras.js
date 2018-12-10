@@ -3,7 +3,7 @@ function Lapras(playerPosition) {
     "Lapras",
     "./assets/img/lapras.gif",
     "water",
-    [new Move('Ice Beam'), new Hydropump(), new Move('Body Slam'), new Move('Sheer Cold')],
+    [new Icebeam(), new Hydropump(), new Bodyslam(), new Move('Sheer Cold')],
     playerPosition || 1);
 }
 Lapras.prototype = Object.create(Pokemon.prototype);
