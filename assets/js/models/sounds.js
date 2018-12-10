@@ -23,7 +23,7 @@ Sounds.prototype.start = function() {
 }
 
 Sounds.prototype.setSound = function() {
-  this.$backgroundSound.animate({volume: 0.6}, 1000);
+  this.$backgroundSound.animate({volume: 0.4}, 500);
   this.$soundButton.click(function() {
     if(this.isBackgroundOn) {
       this.isBackgroundOn = false;

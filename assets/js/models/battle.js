@@ -17,7 +17,7 @@ function Battle(pokemonElected) {
   this.$playerPanel1 = $('.player-panel-1');
   this.$playerPanel2 = $('.player-panel-2');
 
-  this.battleMusicSrc = "assets/sounds/battle.mp3";
+  this.battleMusicSrc = "assets/sounds/battle-dubstep.mp3";
   this.$backgroundSound = $('#background-sound');
 
   this.$loadingValue = $('#loading-value');
@@ -63,7 +63,7 @@ Battle.prototype.initializeBattleBoard = function() {
 
 Battle.prototype.loadBattleMusic = function() {
   this.$backgroundSound.attr('src', this.battleMusicSrc);
-  this.$backgroundSound.animate({volume: 0.7}, 2000);
+  this.$backgroundSound.animate({volume: 0.2}, 2000);
 }
 
 Battle.prototype.turnsGame = function() {
@@ -101,7 +101,7 @@ Battle.prototype.attackPokemon1 = function(numberAttack) {
         this.player1.winsBattle();
         setTimeout(function() {
           location.reload();
-        }, 8000);
+        }, 10000);
     } else {
       setTimeout(function() {
         this.player2.changeMachinePokemon();
@@ -128,7 +128,7 @@ Battle.prototype.attackPokemon2 = function(numberAttack) {
         this.player2.winsBattle();
         setTimeout(function() {
           location.reload();
-        }, 8000);
+        }, 7000);
     } else {
       setTimeout(function() {
         this.player1.changePokemon();

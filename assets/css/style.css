@@ -220,10 +220,10 @@ body {
 
 .confirmation-start {
   position: fixed;
-  width: 50%;
+  width: 60%;
   top: 25%;
   right: 50%;
-  margin-right: -25%;
+  margin-right: -30%;
   background-image: linear-gradient(90deg, #29323c 0%, #485563 100%);  color: #FFF;
   color: #FFF;
   text-align: center;
