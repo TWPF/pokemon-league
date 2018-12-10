@@ -1,13 +1,13 @@
 function Battle(pokemonElected) {
   
+  this.pokemonList = [new Blastoise(2), new Charizard(2), new Gengar(2), new Pikachu(2), new Dodrio(2), new Alakazam(2), new Dragonite(2), new Gyarados(2), new Lapras(2), new Magikarp(2), new Mrmime(2), new Articuno(2), new Moltres(2), new Zapdos(2)];
+
   this.pokemon1 = pokemonElected[0];
   this.pokemon2 = pokemonElected[1];
   this.pokemon3 = pokemonElected[2];
-  this.pokemon4 = new Lapras(2);
-  this.pokemon5 = new Articuno(2);
-  this.pokemon6 = new Mrmime(2);
+
   this.player1 = new Player('Javi', 1, this.pokemon1, this.pokemon2, this.pokemon3);
-  this.player2 = new Player('Machine', 2, this.pokemon4, this.pokemon5, this.pokemon6);
+  this.player2 = new Player('Machine', 2, this.randomPokemon(), this.randomPokemon(), this.randomPokemon());
 
   this.$startBackground = $('.start-background');
   this.$characterSelector = $('#characters-selector');
@@ -156,3 +156,9 @@ Battle.prototype.attackPokemon2 = function(numberAttack) {
     })
   }
 
+
+  Battle.prototype.randomPokemon = function() {
+    var randomNumber = Math.floor(Math.random() * 13);
+    console.log(this.pokemonList[randomNumber]);
+    return this.pokemonList[randomNumber];
+  }

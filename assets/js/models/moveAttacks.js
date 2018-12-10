@@ -230,3 +230,14 @@ function Slam() {
 }
 
 Slam.prototype = Object.create(Move.prototype);
+
+
+function Ancientpower() {
+  Move.call(this,
+  "Ancient Power",
+  "./assets/img/thunderbolt.png",
+  "thunderbolt",
+  );
+}
+
+Ancientpower.prototype = Object.create(Move.prototype);

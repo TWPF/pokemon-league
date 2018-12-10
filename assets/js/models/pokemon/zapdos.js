@@ -3,7 +3,7 @@ function Zapdos(playerPosition) {
     "Zapdos",
     "./assets/img/zapdos.gif",
     "electric",
-    [new Thunderstorm(), new Move('Ancient Power'), new Move("Drill Peck"), new Move('Rain Dance')],
+    [new Thunderstorm(), new Ancientpower(), new Move("Drill Peck"), new Move('Rain Dance')],
     playerPosition || 1);
 }
 

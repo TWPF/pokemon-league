@@ -76,7 +76,7 @@ Pokemon.prototype.setPsPoints = function() {
 
 Pokemon.prototype.setAttackButtons = function() {
         for (var i = 0; i < 4; i++) {
-            $(PLAYER1_SELECTORS[i]).text(this.movements[i].name + "  " + this.movements[i].powerpoints + "/5");
+            $(PLAYER1_SELECTORS[i]).text(this.movements[i].name + "  " + this.movements[i].powerpoints + "|5");
             $(PLAYER1_SELECTORS[i]).removeClass('disabled');
         }
 }
