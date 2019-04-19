@@ -46,10 +46,7 @@ CharactersSelector.prototype.initializeCharacterScreen = function() {
   this.pokemonList.forEach(
     function(pokemon) {
       var pokemonLi = $("<li></li>").addClass("pokemon-element");
-      var pokemonImg = $("<img>").attr(
-        "src",
-        "assets/img/" + pokemon.name.toLowerCase() + ".gif"
-      );
+      var pokemonImg = $("<img>").attr("src", pokemon.imageSrc);
       var pokemonName = $("<h3></h3>").text(pokemon.name);
       $(pokemonLi)
         .append(pokemonImg)
