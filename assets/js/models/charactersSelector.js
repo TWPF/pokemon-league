@@ -88,10 +88,7 @@ CharactersSelector.prototype.checkIfThereIs3Pokemon = function() {
 CharactersSelector.prototype.initializeConfirmScreen = function() {
   this.pokemonElected.forEach(function(pokemon) {
     var pokemonLi = $("<li></li>").addClass("pokemon-element-elected");
-    var pokemonImg = $("<img>").attr(
-      "src",
-      "assets/img/" + pokemon.name + ".gif"
-    );
+    var pokemonImg = $("<img>").attr("src", pokemon.imageSrc);
     var pokemonName = $("<h3></h3>").text(pokemon.name);
     $(pokemonLi)
       .append(pokemonImg)
